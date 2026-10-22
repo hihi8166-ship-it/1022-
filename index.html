@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="기업의 비즈니스 고민, 검증된 전문가와 함께 해결하세요."
+    />
+    <title>Talentbank | 검증된 전문가와 함께하는 비즈니스</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="header-top wrap">
+        <a href="index.html" class="logo" aria-label="탤런트뱅크 홈"
+          >talent<span>bank</span><i></i
+        ></a>
+        <form id="search-form" class="search">
+          <input
+            id="search"
+            aria-label="통합검색"
+            placeholder="어떤 전문가를 찾고 계신가요?"
+          /><button aria-label="검색">
+            <svg viewBox="0 0 24 24">
+              <circle cx="10" cy="10" r="6.5" />
+              <path d="m15 15 5 5" />
+            </svg>
+          </button>
+        </form>
+        <div class="account">
+          <a href="https://www.talentbank.co.kr/" target="_blank" rel="noopener"
+            >로그인</a
+          ><span></span
+          ><a
+            href="https://www.talentbank.co.kr/"
+            target="_blank"
+            rel="noopener"
+            >회원가입</a
+          ><button class="inquiry" data-contact>서비스 문의</button>
+        </div>
+      </div>
+      <nav class="wrap">
+        <div class="nav-links">
+          <a href="#experts">전문가 검색</a><a href="#projects">프로젝트</a
+          ><a href="#subscription">임원 구독제 <small>NEW</small></a
+          ><a href="#stories">성공사례</a><a href="#experts">인재추천</a
+          ><a href="#projects" data-tab="세미나">세미나</a>
+        </div>
+        <a
+          class="notice-link"
+          href="https://www.talentbank.co.kr/"
+          target="_blank"
+          rel="noopener"
+          >공지사항 / 이벤트 <span>↗</span></a
+        >
+      </nav>
+    </header>
+    <main>
+      <section class="hero" id="subscription">
+        <div class="wrap hero-inner">
+          <div class="hero-copy">
+            <p class="eyebrow">기업의 고민에, 전문가라는 해답</p>
+            <h1>
+              필요한 순간, 필요한 전문가<br /><strong>탤런트뱅크</strong>에서
+              만나세요.
+            </h1>
+            <p class="hero-description">
+              경험이 다른 전문가의 인사이트로<br />비즈니스의 새로운 가능성을
+              열어보세요.
+            </p>
+            <button class="primary" data-contact>
+              전문가 추천받기 <span>→</span>
+            </button>
+            <div class="slide-controls">
+              <button id="prev-slide" aria-label="이전 배너">‹</button
+              ><span><b id="slide-number">01</b> / 03</span
+              ><button id="next-slide" aria-label="다음 배너">›</button
+              ><button id="pause-slide" aria-label="자동 재생 정지">Ⅱ</button>
+              <div class="progress"><i></i></div>
+            </div>
+          </div>
+          <div class="hero-art" aria-hidden="true">
+            <div class="orbit orbit-one"></div>
+            <div class="orbit orbit-two"></div>
+            <div class="art-label label-one"><span>✦</span> 검증된 전문성</div>
+            <div class="art-label label-two">
+              <span>↗</span> 비즈니스의 성장
+            </div>
+            <div class="sculpture">
+              <div class="sculpture-top"></div>
+              <div class="sculpture-middle"></div>
+              <div class="sculpture-bottom"></div>
+            </div>
+            <div class="art-caption">EXPERTISE<br />MAKES A DIFFERENCE.</div>
+            <div class="spark">✦</div>
+          </div>
+        </div>
+      </section>
+      <section class="wrap service-shortcuts">
+        <a href="#experts"
+          ><span class="shortcut-icon">⌕</span>
+          <div>
+            <b>전문가 찾기</b>
+            <p>우리 기업에 꼭 맞는 전문가</p>
+          </div>
+          <i>↗</i></a
+        ><a href="#projects"
+          ><span class="shortcut-icon">▤</span>
+          <div>
+            <b>프로젝트 찾기</b>
+            <p>나의 경험이 필요한 프로젝트</p>
+          </div>
+          <i>↗</i></a
+        ><button data-contact>
+          <span class="shortcut-icon">♧</span>
+          <div>
+            <b>무료 상담 신청</b>
+            <p>어디서부터 시작할지 고민이라면</p>
+          </div>
+          <i>↗</i>
+        </button>
+      </section>
+      <section class="wrap projects section" id="projects">
+        <div class="section-heading">
+          <div class="tabs" role="tablist" aria-label="콘텐츠 종류">
+            <button
+              class="active"
+              role="tab"
+              aria-selected="true"
+              data-tab="프로젝트"
+            >
+              프로젝트</button
+            ><button role="tab" aria-selected="false" data-tab="전문가">
+              전문가</button
+            ><button role="tab" aria-selected="false" data-tab="세미나">
+              세미나
+            </button>
+          </div>
+          <div class="list-controls">
+            <span>지금, 새로운 기회를 만나보세요.</span
+            ><button id="cards-prev" aria-label="이전 목록">‹</button
+            ><button id="cards-next" aria-label="다음 목록">›</button>
+          </div>
+        </div>
+        <div id="project-cards" class="project-grid"></div>
+        <p id="search-message" role="status"></p>
+      </section>
+      <section class="fields-section">
+        <div class="wrap">
+          <div class="section-heading">
+            <div>
+              <p class="section-kicker">FIND YOUR EXPERT</p>
+              <h2>어떤 분야의 전문가가 필요하세요?</h2>
+            </div>
+            <a href="#experts" class="more">전체 전문가 보기 <span>→</span></a>
+          </div>
+          <div id="fields" class="fields-grid"></div>
+        </div>
+      </section>
+      <section class="wrap section experts" id="experts">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">TALENTBANK EXPERTS</p>
+            <h2>경험이 만드는 차이, 전문가를 만나보세요</h2>
+          </div>
+          <a href="#search-form" class="more">더 보기 <span>＋</span></a>
+        </div>
+        <div class="expert-tabs">
+          <button class="active" data-category="투자컨설팅">#투자컨설팅</button
+          ><button data-category="해외진출">#해외진출</button
+          ><button data-category="태양광">#태양광</button>
+        </div>
+        <div id="expert-cards" class="expert-grid"></div>
+      </section>
+      <section class="wrap business-banner">
+        <div>
+          <p>더 유연하게, 더 전문적으로</p>
+          <h2>우리 회사에 필요한 경험을 구독하세요.</h2>
+          <span>기업의 성장을 함께할 전문가와 연결해 드립니다.</span>
+        </div>
+        <button data-contact>임원 구독제 알아보기 ↗</button>
+        <div class="banner-art" aria-hidden="true">t<span>+</span></div>
+      </section>
+      <section class="wrap section" id="stories">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">BUSINESS INSIGHT</p>
+            <h2>영상으로 만나는 전문가</h2>
+          </div>
+          <a
+            href="https://www.youtube.com/results?search_query=탤런트뱅크"
+            target="_blank"
+            rel="noopener"
+            class="more"
+            >더 보기 ＋</a
+          >
+        </div>
+        <div class="video-grid">
+          <a
+            href="https://www.youtube.com/results?search_query=탤런트뱅크+투자유치"
+            target="_blank"
+            rel="noopener"
+            ><div class="video-cover cover-one">
+              <small>TALENTBANK · 탤뱅 팁스</small
+              ><b>투자유치의 시작,<br />전문가에게 묻다</b><span>▶</span>
+            </div>
+            <h3>기업의 성장을 위한 투자 전략</h3>
+            <p>투자·IPO 전문가의 비즈니스 인사이트</p></a
+          ><a
+            href="https://www.youtube.com/results?search_query=탤런트뱅크+마케팅"
+            target="_blank"
+            rel="noopener"
+            ><div class="video-cover cover-two">
+              <small>TALENTBANK · 탤뱅 팁스</small
+              ><b>성장을 만드는<br />마케팅의 힘</b><span>▶</span>
+            </div>
+            <h3>실무 경험으로 풀어보는 마케팅</h3>
+            <p>전문가와 함께 찾는 우리 기업의 해답</p></a
+          ><a
+            href="https://www.youtube.com/results?search_query=탤런트뱅크+해외진출"
+            target="_blank"
+            rel="noopener"
+            ><div class="video-cover cover-three">
+              <small>TALENTBANK · 탤뱅 팁스</small
+              ><b>더 넓은 시장으로,<br />글로벌 비즈니스</b><span>▶</span>
+            </div>
+            <h3>해외 진출, 무엇부터 시작할까요?</h3>
+            <p>글로벌 비즈니스 전문가를 만나보세요</p></a
+          >
+        </div>
+      </section>
+      <section class="contact-strip">
+        <div class="wrap">
+          <div>
+            <h2>비즈니스 고민, 혼자 고민하지 마세요.</h2>
+            <p>탤런트뱅크가 전문가와 함께 해결의 실마리를 찾아드립니다.</p>
+          </div>
+          <button class="primary" data-contact>서비스 문의하기 →</button>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="wrap">
+        <div class="footer-top">
+          <a href="index.html" class="logo">talent<span>bank</span><i></i></a>
+          <div>
+            <a
+              href="https://www.talentbank.co.kr/"
+              target="_blank"
+              rel="noopener"
+              >회사소개</a
+            ><a
+              href="https://www.talentbank.co.kr/"
+              target="_blank"
+              rel="noopener"
+              >이용약관</a
+            ><a
+              href="https://www.talentbank.co.kr/"
+              target="_blank"
+              rel="noopener"
+              ><b>개인정보처리방침</b></a
+            ><button data-contact>서비스 문의</button>
+          </div>
+        </div>
+        <p>주식회사 탤런트뱅크 · 비즈니스 전문가 매칭 플랫폼</p>
+        <p>기업의 비즈니스 고민, 검증된 전문가가 직접 해결합니다.</p>
+        <small>© TALENTBANK. All rights reserved.</small>
+        <p class="demo-note">
+          학습용으로 재현한 화면입니다. 상담 및 회원 서비스는 원본 사이트를
+          이용해 주세요.
+        </p>
+      </div>
+    </footer>
+    <button class="floating-contact" data-contact aria-label="서비스 상담">
+      상담<br />문의 <span>↗</span></button
+    ><button class="back-top" aria-label="맨 위로">↑</button>
+    <dialog id="contact-dialog">
+      <button class="dialog-close" aria-label="닫기">×</button>
+      <p class="section-kicker">TALENTBANK</p>
+      <h2>전문가와 함께 해결하세요.</h2>
+      <p>
+        실제 상담 및 프로젝트 의뢰는<br />탤런트뱅크 공식 홈페이지에서 진행할 수
+        있습니다.
+      </p>
+      <a
+        class="primary"
+        href="https://www.talentbank.co.kr/"
+        target="_blank"
+        rel="noopener"
+        >공식 홈페이지로 이동 ↗</a
+      >
+    </dialog>
+    <div id="toast" role="status"></div>
+    <script src="script.js"></script>
+  </body>
+</html>
