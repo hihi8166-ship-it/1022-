@@ -1,0 +1,23 @@
+{
+  "checks": [
+    "Navigation: 전문가 검색",
+    "Navigation: 프로젝트",
+    "Navigation: 임원 구독제",
+    "Navigation: 성공사례",
+    "Navigation: 인재추천",
+    "Navigation: 세미나",
+    "Original autocomplete, selection and search heading/count",
+    "Empty search stays on home",
+    "All seven original search-result tabs",
+    "Refinement chips add and remove",
+    "Expert field selection loads original subfields",
+    "Success-story pagination loads next 20 distinct items",
+    "Seminar pagination loads next items",
+    "Four detail routes resolve to original local pages",
+    "Full seminar poster image loads",
+    "FAQ list and accordion",
+    "Opening index.html directly supports search",
+    "Eight mobile screens fit 390px viewport"
+  ],
+  "errors": []
+}

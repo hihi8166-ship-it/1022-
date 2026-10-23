@@ -1,0 +1,25 @@
+{
+  "browser": "Microsoft Edge",
+  "checks": [
+    "index.html: autocomplete and clear",
+    "experts.html: autocomplete and clear",
+    "projects.html: autocomplete and clear",
+    "subscription.html: autocomplete and clear",
+    "stories.html: autocomplete and clear",
+    "recruit.html: autocomplete and clear",
+    "seminars.html: autocomplete and clear",
+    "search.html: autocomplete and clear",
+    "Empty query stays on page and shows message",
+    "Enter navigates to grouped search results with seven tabs",
+    "Expert tab, counts and persistent bookmark",
+    "Refinement applies AND matching, removable tags and empty state",
+    "Refinement limited to three keywords",
+    "Result links open matching expert and functional detail dialog",
+    "Keyboard selection searches autocomplete suggestion",
+    "Clicking suggestion submits selected keyword",
+    "Query rendered as text, empty result handled",
+    "Mobile layout fits viewport; tabs and status filters work",
+    "No JavaScript page errors across all pages and interactions"
+  ],
+  "errors": []
+}

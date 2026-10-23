@@ -1,0 +1,4 @@
+.qa-tools/
+__pycache__/
+.mirror-source/
+.previous-site/

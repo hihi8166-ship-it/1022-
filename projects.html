@@ -1,145 +1,2907 @@
-<!doctype html>
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
 <html lang="ko">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>프로젝트 | HUMANLINE</title>
-    <link rel="icon" href="favicon.jpg" />
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/pages.css" />
-  </head>
-  <body>
-    <header>
-      <div class="header-top wrap">
-        <a href="index.html" class="logo" aria-label="휴먼라인 홈"
-          >Human<span>Line</span><i></i
-        ></a>
-        <form id="search-form" class="search">
-          <input
-            id="search"
-            aria-label="통합검색"
-            placeholder="어떤 전문가를 찾고 계신가요?"
-          /><button aria-label="검색">
-            <svg viewBox="0 0 24 24">
-              <circle cx="10" cy="10" r="6.5" />
-              <path d="m15 15 5 5" />
-            </svg>
-          </button>
-        </form>
-        <div class="account">
-          <a href="https://www.talentbank.co.kr/" target="_blank" rel="noopener"
-            >로그인</a
-          ><span></span
-          ><a
-            href="https://www.talentbank.co.kr/"
-            target="_blank"
-            rel="noopener"
-            >회원가입</a
-          ><button class="inquiry" data-contact>서비스 문의</button>
-        </div>
-      </div>
-      <nav class="wrap">
-        <div class="nav-links">
-          <a href="experts.html">전문가 검색</a
-          ><a href="projects.html" class="current" aria-current="page"
-            >프로젝트</a
-          ><a href="subscription.html">임원 구독제</a
-          ><a href="stories.html">성공사례</a><a href="recruit.html">인재추천</a
-          ><a href="seminars.html">세미나</a>
-        </div>
-        <a
-          class="notice-link"
-          href="https://www.talentbank.co.kr/"
-          target="_blank"
-          rel="noopener"
-          >공지사항 / 이벤트 <span>↗</span></a
-        >
-      </nav>
-    </header>
-    <main data-page="projects">
-      <section class="page-hero">
-        <div class="wrap">
-          <p class="breadcrumb"><a href="index.html">HOME</a> / 프로젝트</p>
-          <p class="section-kicker">HUMANLINE · 프로젝트</p>
-          <h1>당신의 경험이 필요한 프로젝트</h1>
-          <p>전문성을 발휘할 수 있는 새로운 비즈니스 기회를 만나보세요.</p>
-        </div>
-      </section>
-      <section class="wrap page-content">
-        <form id="list-filter" class="filter-panel">
-          <label>분야 / 상태<select id="category"></select></label
-          ><label class="filter-query"
-            >검색어<input
-              id="keyword"
-              placeholder="관심 있는 키워드를 입력하세요" /></label
-          ><button class="primary">검색</button
-          ><button type="reset" class="outline">초기화</button>
-        </form>
-        <div class="results-heading">
-          <h2 id="result-title">전체 목록</h2>
-          <span id="result-count" role="status"></span>
-        </div>
-        <div id="listing" class="listing-grid"></div>
-        <div id="pagination" class="pagination" aria-label="페이지 선택"></div>
-      </section>
-    </main>
-    <footer>
-      <div class="wrap">
-        <div class="footer-top">
-          <a href="index.html" class="logo">human<span>line</span><i></i></a>
-          <div>
-            <a
-              href="https://www.talentbank.co.kr/"
-              target="_blank"
-              rel="noopener"
-              >회사소개</a
-            ><a
-              href="https://www.talentbank.co.kr/"
-              target="_blank"
-              rel="noopener"
-              >이용약관</a
-            ><a
-              href="https://www.talentbank.co.kr/"
-              target="_blank"
-              rel="noopener"
-              ><b>개인정보처리방침</b></a
-            ><button data-contact>서비스 문의</button>
-          </div>
-        </div>
-        <p>주식회사 휴먼라인 · 비즈니스 전문가 매칭 플랫폼</p>
-        <p>기업의 비즈니스 고민, 검증된 전문가가 직접 해결합니다.</p>
-        <small>© TALENTBANK. All rights reserved.</small>
-        <p class="demo-note">
-          학습용으로 재현한 화면입니다. 상담 및 회원 서비스는 원본 사이트를
-          이용해 주세요.
-        </p>
-      </div>
-    </footer>
-    <button class="floating-contact" data-contact aria-label="서비스 상담">
-      상담<br />문의 <span>↗</span></button
-    ><button class="back-top" aria-label="맨 위로">↑</button>
-    <dialog id="contact-dialog">
-      <button class="dialog-close" aria-label="닫기">×</button>
-      <p class="section-kicker">TALENTBANK</p>
-      <h2>전문가와 함께 해결하세요.</h2>
-      <p>
-        실제 상담 및 프로젝트 의뢰는<br />탤런트뱅크 공식 홈페이지에서 진행할 수
-        있습니다.
-      </p>
-      <a
-        class="primary"
-        href="https://www.talentbank.co.kr/"
-        target="_blank"
-        rel="noopener"
-        >공식 홈페이지로 이동 ↗</a
-      >
-    </dialog>
-    <div id="toast" role="status"></div>
-    <dialog id="detail-dialog">
-      <button class="detail-close" aria-label="??">?</button>
-      <div id="detail-content"></div>
-    </dialog>
-    <script src="page-data.js"></script>
-    <script src="pages.js"></script>
-  </body>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<!-- <meta http-equiv="Cache-Control" content="no-cache" /> -->
+<meta http-equiv="Expires" content="0"/>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+<meta http-equiv="Imagetoolbar" content="no" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
+
+<title>Talentbank :: 기업의 비즈니스 고민, 검증된 전문가가 직접 해결합니다</title>
+
+<meta name="viewport"						content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0" />
+<meta name="naver-site-verification"        content="57f9049033f61878e5a18f6cce1a989a314c3340" />
+<meta name="description"					content="대기업 팀장, 중소기업 임원급 이상의 수천 명의 전문가 프로필을 확인하세요! 당신이 찾는 전문가님을 지금 바로 만나보실 수 있습니다." />
+<meta name="title"							content="탤런트뱅크" />
+<meta name="author"							content="Hunet" />
+<meta name="robots"							content="index,follow" />
+<meta name="apple-itunes-app"				content="app-id=1452430212" />
+<meta name="format-detection"				content="telephone=no" />
+<meta name="facebook-domain-verification" 	content="cdblcx9wy6osddcmruobcamkzktshg" />
+<meta name="keywords"                       content="탤런트뱅크,텔런트뱅크,탈렌트뱅크,TALENTBANK,프리랜서,비즈니스,자문,컨설팅,헤드헌팅,중소,정부지원사업,탤뱅"/>
+
+<meta property="fb:app_id"		content="1746441448986917" />
+<meta property="og:type"		content="website" />
+<meta property="og:title"		content="탤런트뱅크 " />
+<meta property="og:image"		content="https://www.talentbank.co.kr/assets/img/common/tb_Thumbnail.png" />
+
+<meta property="og:url"			content="https://www.talentbank.co.kr" />
+
+<meta property="og:description"	content="기업의 비즈니스 고민, 검증된 전문가가 직접 해결합니다." />
+
+<meta property="al:ios:url" content="https://itunes.apple.com/kr/app/id1452430212?mt=8" />
+<meta property="al:ios:app_store_id" content="1452430212" />
+<meta property="al:ios:app_name" content="대기업 팀장, 중소기업 임원급 이상의 수천 명의 전문가 프로필을 확인하세요! 당신이 찾는 전문가님을 지금 바로 만나보실 수 있습니다." />
+
+<meta property="al:android:url" content="https://play.google.com/store/apps/details?id=kr.co.hunet.talentbank" />
+<meta property="al:android:app_name" content="대기업 팀장, 중소기업 임원급 이상의 수천 명의 전문가 프로필을 확인하세요! 당신이 찾는 전문가님을 지금 바로 만나보실 수 있습니다." />
+<meta property="al:android:package" content="kr.co.hunet.talentbank" />
+
+<meta property="al:web:url" content="https://www.talentbank.co.kr" />
+
+<meta property="serverMode" id="serverMode" content="PRODUCTION" />
+
+<!-- SNS연관채널 등록 -->
+<script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "Organization",
+        "name": "Talentbank",
+        "url": "https://www.talentbank.co.kr",
+        "sameAs": [
+            "https://blog.naver.com/talentbankmk",
+            "https://post.naver.com/talentbank123",
+            "https://facebook.com/Talentbank-111850668100866",
+            "https://www.youtube.com/channel/UC6BpWQi6c4KbKLTaygT02zA"
+        ]
+    }
+</script>
+<!-- 22.02.28 SNS연관채널 등록 끝 -->
+
+
+
+
+
+
+
+
+
+
+
+<!-- release version : 2405290 -->
+
+
+	
+	
+	
+	
+	
+	
+		<link href="assets/mirror/de7179f8c0595bb0a285.css" rel="stylesheet" />
+		<link href="css/pages.css" rel="stylesheet" />
+	
+
+<link href="assets/mirror/868860493f858ae40af0.ico" rel="shortcut icon" />
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" src="assets/mirror/5ea04ef70fb3f963128a.js"></script>
+<script type="text/javascript" src="assets/mirror/36fd6477ccce41214f39.js"></script>
+<script type="text/javascript" src="assets/mirror/d49b54cf52ff4d92e902.js"></script>
+<script type="text/javascript" src="assets/mirror/975ecf3cf327406c4e89.js"></script>
+<script type="text/javascript" src="assets/mirror/a0bbe6468bfee094c36f.js"></script>
+<script type="text/javascript" src="assets/mirror/63dde3a5c0433009e3f9.js"></script><!--  221014 추가 -->
+
+<script type="text/javascript" src="assets/mirror/81036945ebb230928f90.js"></script><script src="site-fixtures.js"></script><script src="site-catalog.js"></script><script src="local-adapter.js"></script>
+
+<script type="text/javascript" src="assets/mirror/ea632d56f569d3e2c642.js"></script>
+<script type="text/javascript" src="assets/mirror/2437633177c04b2184ac.js"></script>
+<script type="text/javascript" src="assets/mirror/793f9803228d6bd5629f.js"></script> 
+
+
+	<!-- Google Tag Manager -->
+	
+	<!--// Google Tag Manager -->
+
+
+<!-- End Google Tag Manager -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="popup popup-alert" id="alertPop" style="display: none; z-index:1000;">
+	<div class="popup-content">
+		<div class="popup-body">
+			<div class="popup-alert-icon">
+				<i class="icon popicon icon-alert-caution" id="alert_icon_type"></i>
+			</div>
+			<div class="popup-alert-text" id="alertContent"></div>
+			<div class="popup-alert-footer">
+				<button type="button" class="btn btn-block btn-client" id="alertBtn">확인</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="popup popup-alert" id="confirmPop" style="display: none; z-index:1000;">
+	<div class="popup-content">
+		<div class="popup-body">
+			<div class="popup-alert-icon">
+				<i class="icon popicon icon-alert-check" id="confirm_icon_type"></i>
+			</div>
+			<div class="popup-alert-text" id="confirmContent"></div>
+			<div class="popup-alert-footer">
+				<button type="button" class="btn btn-primary" id="confirmBtn1">취소</button>
+				<button type="button" class="btn btn-client" id="confirmBtn2">확인</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="popup popup-alert" id="confirmPopup" style="display: none; z-index:1000;">
+	<div class="popup-content">
+		<div class="popup-body">
+			<div class="popup-alert-icon">
+				<i class="icon popicon icon-alert-check" id="confirm_icon_type"></i>
+			</div>
+			<div class="popup-alert-text" id="confirmUpContent"></div>
+			<div class="popup-alert-footer">
+				<div class="button-area">
+					<button type="button" class="btn btn-lg btn-primary flex" id="confirmUpBtn1">취소</button>
+					<button type="button" class="btn btn-lg btn-primary" id="confirmUpBtn2">확인</button>
+					<button type="button" class="btn btn-lg btn-client" id="confirmUpBtn3">확인</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="popup" id="MyPopSpinner" style="display:none; z-index:1010">
+	<div class="popup-content">
+		<div class="page-spinner"></div>
+	</div>
+</div>
+
+<div class="layer-popup layer-popup-custom theme-a type-a project-qna-pop" id="expertProjectQnaModal">
+	<div class="popup-page-body">
+		<div class="popup-local-head"><h2 class="popup-name" id="expertProjectQnaTitle">프로젝트 문의하기</h2></div>
+		<div class="popup-local-body">
+			<div class="popup-content-body">
+				<textarea name="expertModalQnaContent" id="expertModalQnaContent" class="form-control" rows="10" placeholder="문의하실 내용을 작성해주세요"></textarea>
+				<div class="text-right mt-2 text-muted">
+					(<span id="expertModalTxtCnt">0</span>/200자)
+				</div>
+				<div class="button-panel button-area text-center">
+					<a href="javascript:void(0);" class="btn btn-expert" onclick="lf_saveExpertProjectReplyModal()">등록하기</a>
+				</div>
+			</div>
+		</div>
+		<button type="button" class="close" onclick="$('.project-qna-pop').removeClass('active');"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><title>닫기</title><path d="M12 11.293l10.293-10.293.707.707-10.293 10.293 10.293 10.293-.707.707-10.293-10.293-10.293 10.293-.707-.707 10.293-10.293-10.293-10.293.707-.707 10.293 10.293z"></path></svg></button>
+	</div>
+</div>
+
+
+<div id="clientProjectQnaModal" class="layer-popup layer-popup-custom theme-a type-a project-qna-pop">
+	<div class="popup-page-body">
+		<div class="popup-local-head"><h2 class="popup-name">프로젝트 답변하기</h2></div>
+		<div class="popup-local-body">
+			<div class="popup-content-body">
+				<textarea name="clientModalTailContent" id="clientModalTailContent" class="form-control" rows="10" placeholder="문의하신 내용에 답변을 작성해주세요"></textarea>
+				<div class="text-right mt-2 text-muted">
+					(<span id="clientModalTxtCnt">0</span>/200자)
+				</div>
+				<div class="button-panel button-area text-center">
+					<a href="javascript:void(0);" class="btn btn-client" onclick="lf_saveClientProjectReplyModal()">등록하기</a>
+				</div>
+			</div>
+		</div>
+		<button type="button" class="close" onclick="$('.project-qna-pop').removeClass('active');"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><title>닫기</title><path d="M12 11.293l10.293-10.293.707.707-10.293 10.293 10.293 10.293-.707.707-10.293-10.293-10.293 10.293-.707-.707 10.293-10.293-10.293-10.293.707-.707 10.293 10.293z"></path></svg></button>
+	</div>
+</div>
+
+
+<div class="popup popup-alert alert-wrap-v2" id="waitPop">
+	<div class="popup-content">
+		<div class="popup-body">
+			<div class="popup-alert-icon">
+				<i class="icon icon-alert-user"></i>
+			</div>
+			<div class="popup-alert-text">Profile을 보강 후,<br>다시 인증 신청해 주세요!</div>
+			<div class="popup-alert-text-box">
+				Expert 인증 검토를 위해<br>아래와 같이<br>프로필 보강이 필요합니다.
+				<div class="admin-text"></div>
+			</div>
+			<div class="popup-alert-footer">
+				<button type="button" class="btn btn-expert" data-dismiss="popup">확인</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="popup popup-alert alert-wrap-v2" id="noPassPop">
+	<div class="popup-content">
+		<div class="popup-body">
+			<div class="popup-alert-icon">
+			  <i class="icon icon-alert-user-no"></i>
+			</div>
+			<div class="popup-alert-text">Expert 인증이 미승인 되었습니다.</div>
+			<div class="popup-alert-text-box">
+				<div class="text-sm">
+					탤런트뱅크에<br>
+					관심 가져 주셔서 감사합니다.<br>
+					아쉽게도 탤런트뱅크와 인연이 닿지<br>
+					않음을 안타깝게 생각합니다.<br><br>
+					Talentbank에 지원하셨던 경험이<br>
+					다른 곳에서 멋진 역할을 해나가시는데<br>
+					도움이 되기를 소망합니다.
+				</div>
+				<div class="cs">
+					고객센터 1833-4730
+				</div>
+				<p class="text-detail text-sm mt-1">상담시간 : 09:00 ~ 18:00 (토/일/공휴일 휴무)</p>
+			</div>
+			<div class="popup-alert-footer">
+				<button type="button" class="btn btn-expert" data-dismiss="popup">확인</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="popup popup-alert popup-alert-wrap" id="vbPayInfo">
+	<div class="popup-content">
+		<div class="popup-body for-client">
+			<div class="popup-alert-icon">
+				<i class="icon icon-alert-info"></i>
+			</div>
+			<div class="popup-alert-text">
+				온라인자문 서비스 이용에 불편을 드려 죄송합니다.<br>
+				현재는 가상계좌 결제 가능시간이 아닙니다.<br>
+				(가상계좌 결제 가능시간 : 00:00 ~ 23:50)
+			</div>
+			<div class="popup-alert-footer">
+				<button type="button" class="btn btn-block btn-client" data-dismiss="popup">확인</button>
+			</div>
+
+			<button type="button" class="btn btn-popup-close" data-dismiss="popup">닫기</button>
+		</div>
+	</div>
+</div>
+
+
+<div class="popup popup-alert popup-alert-wrap" id="notConfirm">
+	<div class="popup-content">
+		<div class="popup-body for-">
+			<div class="popup-alert-icon">
+				<i class="icon icon-alert-question"></i>
+			</div>
+			<div class="popup-alert-title">
+				상품 내용을 보완 하신 후, <br/> 다시 승인 신청해주세요!
+			</div>
+			<div class="popup-alert-text">
+				상품 승인 검토를 위해 아래와 같이<br>보완을 요청 드립니다.
+			</div>
+			<div class="popup-alert-text-box pm-text-box">
+				<div class="text-sm text-left">
+					<textarea class="form-control" rows="8" placeholder="" id="notConfirmContent" readonly></textarea>
+				</div>
+			</div>
+			<p class="typed-limit" style="margin: 6px 0 20px 0;text-align: right;font-size: 16px;line-height: 24px;color: #989898;"></p>
+			<div class="popup-alert-footer">
+				<div class="button-area">
+					<button type="button" class="btn btn-lg btn-" data-dismiss="popup" id="notConfirmBtn">확인</button></div>
+			</div>
+		</div>
+		<button type="button" class="btn btn-popup-close" data-dismiss="popup">닫기</button>
+	</div>
+</div>
+
+
+<div class="popup popup-alert popup-alert-wrap" id="stopConsult">
+	<div class="popup-content">
+		<div class="popup-body for-">
+			<div class="popup-alert-icon">
+				<i class="icon icon-alert-sorry"></i>
+			</div>
+			<div class="popup-alert-title">
+				관리자에 의해 온라인자문 상품이 <br/> 중지처리 되었습니다.
+			</div>
+			<div class="popup-alert-text"></div>
+			<div class="popup-alert-text-box pm-text-box">
+				<div class="text-sm text-left">
+					<textarea class="form-control" rows="8" placeholder="" id="stopConsultContent" readonly></textarea>
+				</div>
+			</div>
+			<p class="typed-limit" style="margin: 6px 0 20px 0;text-align: right;font-size: 16px;line-height: 24px;color: #989898;"></p>
+			<div class="popup-alert-footer">
+				<div class="button-area">
+					<button type="button" class="btn btn-lg btn-" data-dismiss="popup" id="stopConsultBtn">확인</button></div>
+			</div>
+		</div>
+		<button type="button" class="btn btn-popup-close" data-dismiss="popup">닫기</button>
+	</div>
+</div>
+
+
+<div class="popup popup-alert popup-alert-wrap" id="notProjectProduct">
+	<div class="popup-content">
+		<div class="popup-body for-">
+			<div class="popup-alert-icon">
+				<i class="icon icon-alert-question"></i>
+			</div>
+			<div class="popup-alert-title">
+				상품 내용을 보완 하신 후, <br/> 다시 승인 신청해주세요!
+			</div>
+			<div class="popup-alert-text">
+				상품 승인 검토를 위해 아래와 같이<br>보완을 요청 드립니다.
+			</div>
+			<div class="popup-alert-text-box pm-text-box">
+				<div class="text-sm text-left">
+					<textarea class="form-control" rows="8" id="notProjectProductContent" readonly></textarea>
+				</div>
+			</div>
+			<p class="typed-limit" style="margin: 6px 0 20px 0;text-align: right;font-size: 16px;line-height: 24px;color: #989898;"></p>
+			<div class="popup-alert-footer">
+				<div class="button-area">
+					<button type="button" class="btn btn-lg btn-" data-dismiss="popup" id="notProjectProductBtn">확인</button></div>
+			</div>
+		</div>
+		<button type="button" class="btn btn-popup-close" data-dismiss="popup">닫기</button>
+	</div>
+</div>
+
+
+
+
+
+<div class="modal modal-common modal-expert-introduce modal-margin" id="EGuidePop">
+	<div class="modal-dialog" style="max-width:1200px;">
+		<div class="modal-content">
+			<button type="button" class="close" onclick="closeWin('EGuidePop', 1)"><i class="icon"></i></button>
+			<div class="modal-header">
+				<h4>Expert 소개</h4>
+			</div>
+			<div class="modal-body">
+				<p class="modal-subject">&ldquo;나만의 비즈니스 경험으로,<br class="visible-xs-inline-block"> 내가 원하는 일을 선택해서 일할 수 있다면!<br /><strong>당신의 경험과 전문지식을 Talentbank에서 발휘해보세요</strong>!&rdquo;</p>
+				<div class="modal-merit-wrap">
+					<div class="modal-merit-mass">
+						<img src="assets/mirror/6dcf9b617573cceb3fa6.png" alt="">
+						<p class="modal-merit-title">자유롭게 일할 수 있다!</p>
+						<p>기업과 협의를 통해, 내가 일하고 싶을때만, <br>원하는 시간, 원하는 장소, <br>합리적인 보수로 일을 할 수 있습니다.</p>
+					</div>
+					<div class="modal-merit-mass">
+						<img src="assets/mirror/8afe452f375d6e93df67.png" alt="">
+						<p class="modal-merit-title">5,000만원 상당의<br>온라인 교육과정 무료 수강</p>
+						<p>전문가 전용 연수원에서 <br>651개 이상의 교육과정을<br>무료로 만나보실 수 있습니다.</p>
+					</div>
+					<div class="modal-merit-mass">
+						<img src="assets/mirror/43561c4df7873c10849f.png" alt="">
+						<p class="modal-merit-title">탤런트뱅크 전문가<br>포럼 무료 참석 가능</p>
+						<p>전문가끼리는 통한다!<br>오직 탤런트뱅크 전문가님만을 위한 네트워킹 <br>자리인 포럼에 무료로 참석하실 수 있습니다.</p>
+					</div>
+				</div>
+				<p class="modal-text">프로필 작성에 앞서, Expert님의 정보가 어떤 대상에게 공개가 되는 지 안내해 드립니다.</p>
+				<div class="modal-member-bg-box">
+					<p><strong>비회원 공개 정보</strong>프로필 사진, 전문 분야, 태그, 전문 분야 소개, 경력사항 일부</p>
+					<p><strong>회원 공개 정보</strong>진행대금 (프로젝트별 조율 가능), 학력/자격 정보</p>
+				</div>
+				<p class="modal-text">* 개인정보 (성명, 성별, 생년월일, 연락처)와 증빙서류(통장사본 제외)는 프로젝트 계약 성사 시에만 공개됩니다,</p>
+				<div class="text-center mt-5 mb-0">
+					<button type="submit" class="btn btn-lg btn-block btn-modal-member btn-member-size" onclick="closeWin('EGuidePop', 1)">
+						Profile을 작성해 볼까요?<img src="assets/mirror/d6be7b76ee0a9af9228f.png" alt="">
+					</button>
+					<a class="close-popup day7" href="#" onclick="closeWin('EGuidePop', 7)">7일간 보지 않기</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="modal modal-common modal-mail-share modal-mail-js" id="mobileMailSend">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<button type="button" class="close" data-dismiss="modal">
+				<i class="icon"></i>
+			</button>
+			<div class="modal-header">
+				<h4>메일 공유</h4>
+				<button type="submit" class="btn btn-edge btn-submit" onclick="lf_sendShareEmail('MOBILE')">보내기</button>
+			</div>
+			<div class="modal-content">
+				<ul class="list-form">
+					<li>
+						<span class="title text-muted" style="width: 35%;">보내는 분 성함</span>
+						<input type="text" style="width: 62%;" id="mobileSendName" maxlength="20">
+					</li>
+					<li>
+						<span class="title text-muted" style="width: 39%;">보내는 분 Email</span>
+						<input type="text" style="width: 58%;" id="mobileSendEmail" maxlength="50">
+					</li>
+					<li>
+						<span class="title text-muted" style="width: 34%">받는 분 Email</span>
+						<input type="text" style="width: 63%;" id="mobileReceiveMail" maxlength="50">
+					</li>
+					<li>
+						<span class="title text-muted" style="width: 11%;">제목</span>
+						<input type="text" style="width: 86%;" id="mobileMailTitle" maxlength="20">
+					</li>
+				</ul>
+				<p class="text-detail text-sm text-center">&middot; 수신인과 발신인 Email을 정확하게 입력해주셔야 합니다.</p>
+				<div class="ml-3">
+					<input type="checkbox" id="chk2" class="input-checkbox input-checkbox-primary" name="mobilePrivateCheck" value="OK">
+					<label for="chk2">Email 전송을 위한 개인정보 이용 동의</label>
+					<a href="#" class="text-sm text-info btn-privacy-js">내용 보기</a>
+					<div class="privacy privacy-js" style="display: block;">
+						<h4>개인정보 수집 및 이용 안내</h4>
+						<p>
+							프로필 정보 전송을 위해 이메일을 수집합니다.
+							<br> 프로필 정보 전송 후 즉시 파기하며, 이에 동의하지 않을 경우 Email을 보낼 수 없습니다.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="popup popup-alert popup-push-alert" id="pushChangeModal">
+	<div class="popup-content">
+		<div class="popup-body">
+			<div class="popup-alert-title">
+				<p id="pushChangeTitle">App Push 수신 동의</p>
+				<p class="move-info" id="pushChangeBody"></p>
+			</div>
+			<div class="popup-alert-footer">
+				<button type="button" class="btn btn-block btn-client" data-dismiss="popup" onclick="javascript:location.reload();">확인</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="popup popup-alert popup-push-alert" id="pushSettingGoogle">
+	<div class="popup-content">
+		<div class="popup-body">
+			<div class="popup-alert-title">
+				<p>기기의 알림센터에서</p>
+				<p>설정 변경이 필요합니다.</p>
+				<p class="move-info">아래 순서대로 설정해주세요.</p>
+			</div>
+			<div class="popup-alert-icon">
+				<i class="icon app-push-off-and"></i>
+			</div>
+			<div class="popup-alert-footer">
+				<div class="btn-group-2">
+					<button type="button" class="btn btn-block btn-primary" data-dismiss="popup" onclick="gf_closePop('pushSettingGoogle')">닫기</button>
+					<button type="button" class="btn btn-block btn-expert" data-dismiss="popup" onclick="javascript:location.href = 'jscall://goDevicePushSetting'">설정하기</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="popup popup-alert popup-push-alert" id="pushSettingApple">
+	<div class="popup-content">
+		<div class="popup-body">
+			<div class="popup-alert-title">
+				<p>기기의 알림센터에서</p>
+				<p>설정 변경이 필요합니다.</p>
+				<p class="move-info">아래 순서대로 설정해주세요.</p>
+			</div>
+			<div class="popup-alert-icon">
+				<i class="icon app-push-off-ios"></i>
+			</div>
+			<div class="popup-alert-footer">
+				<div class="btn-group-2">
+					<button type="button" class="btn btn-block btn-primary" data-dismiss="popup" onclick="gf_closePop('pushSettingApple')">닫기</button>
+					<button type="button" class="btn btn-block btn-expert" data-dismiss="popup" onclick="javascript:location.href = 'jscall://goDevicePushSetting'">설정하기</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="popup popup-alert popup-push-alert alert-wrap-v2" id="expertModal">
+	<div class="popup-content">
+		<div class="popup-body">
+			<div class="popup-alert-title">
+				<p>최근 15일동안 회원님께</p>
+				<p>새로운 알림이 있었습니다!</p>
+			</div>
+			<div class="popup-alert-icon">
+				<i class="icon icon-bell-tbe"></i>
+			</div>
+			<div class="popup-alert-text">
+				<span class="wbr">프로젝트 진행 정보 등의 새로운 알림을</span>
+				<span class="wbr">App Push로 가장 빠르게 받아보세요.</span>
+			</div>
+			<div class="popup-alert-footer">
+				<div class="btn-group-2">
+					<button type="button" class="btn btn-primary" onclick="gf_closePop('expertModal')">닫기</button>
+					<button type="button" class="btn btn-expert" id="expertPushReceivBtn" onclick="gf_updatePushReceive('expert', this)">수신받기</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="popup popup-alert popup-push-alert alert-wrap-v2" id="clientModal">
+	<div class="popup-content">
+		<div class="popup-body">
+			<div class="popup-alert-title">
+				<p>최근 15일동안 회원님께</p>
+				<p>새로운 알림이 있었습니다!</p>
+			</div>
+			<div class="popup-alert-icon">
+				<i class="icon icon-bell-tbc"></i>
+			</div>
+			<div class="popup-alert-text">
+				<span class="wbr">프로젝트 진행 정보 등의 새로운 알림을</span>
+				<span class="wbr">App Push로 가장 빠르게 받아보세요.</span>
+			</div>
+			<div class="popup-alert-footer">
+				<div class="btn-group-2">
+					<button type="button" class="btn btn-primary" onclick="gf_closePop('clientModal')">닫기</button>
+					<button type="button" class="btn btn-client" id="clientPushReceivBtn" onclick="gf_updatePushReceive('client', this)">수신받기</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="popup popup-alert popup-push-alert alert-wrap-v2" id="nonMemberPushProposalPop">
+	<div class="popup-content">
+		<div class="popup-body">
+			<div class="popup-alert-title">
+				<p>자문 예약 정보 정보를</p>
+				<p>실시간으로 받아보세요!</p>
+			</div>
+			<div class="popup-alert-box-text">
+				App Push 알림을 설정하시면 자문 예약 정보 및 신규 업데이트정보를 실시간으로 확인할 수 있습니다.
+			</div>
+			<div class="popup-alert-text">
+				<strong>푸시 알림 변경은 설정에서 변경 가능합니다.</strong>
+				<span class="wbr">로그인  >  설정  >  App Push 설정</span>
+			</div>
+			<div class="popup-alert-footer">
+				<div class="btn-group-2">
+					<button type="button" class="btn btn-primary" data-dismiss="popup" id="noMemberNoPushBtn" onclick="gf_closePop('nonMemberPushProposalPop')">나중에 받기</button>
+					<button type="button" class="btn btn-client" data-dismiss="popup" id="noMemberPushBtn">수신받기</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- project 상태 가이드 -->
+<div class="layer-popup theme-a type-a project-status-guide" id="projectStatusGuide">
+	<div class="popup-page-body">
+		<div class="popup-local-head"><h2 class="popup-name">프로젝트 상태 가이드</h2></div>
+		<div class="popup-local-body">
+			<div class="popup-content-body">
+				<ul class="data-list theme-c type-a">
+					<li class="data-item">
+						<div class="data-head">무료 의뢰</div>
+						<div class="data-body">
+						<p class="para">Client님께서 탤런트뱅크에 프로젝트를 의뢰하는 단계입니다. </p>
+							<div class="badge-list">
+								<span class="badge badge-lg badge-request01">임시저장</span>
+								<span class="badge badge-lg badge-request02">상담 요청</span>
+								<span class="badge badge-lg badge-request02">대기</span>
+							</div>
+						</div>
+					</li>
+					<li class="data-item">
+						<div class="data-head">BD(Business Director) 협의</div>
+						<div class="data-body">
+							<p class="para">의뢰하신 프로젝트에 대해 담당BD(Business Director)님이 배정되고, BD님과 미팅을 통해 프로젝트의 내용을 구체화하는 단계입니다.</p>
+							<div class="badge-list">
+								<span class="badge badge-lg badge-consultation">BD 협의</span>
+								<span class="badge badge-lg badge-consultation">최종 확인</span>
+							</div>
+						</div>
+					</li>
+					<li class="data-item">
+						<div class="data-head">전문가 지원</div>
+							<div class="data-body">
+								<p class="para">지원 기간 동안 프로젝트가 탤런트뱅크 전문가님께 홍보되고, 전문가님께서 프로젝트에 지원하는 단계입니다.</p>
+								<div class="badge-list">
+									<span class="badge badge-lg badge-support">승인</span>
+									<span class="badge badge-lg badge-support">지원중</span>
+								</div>
+							</div>
+					</li>
+					<li class="data-item">
+						<div class="data-head">전문가 선정</div>
+						<div class="data-body">
+							<p class="para">프로젝트를 진행하실 전문가님을 선정하는 단계입니다. <br> 프로젝트당 1명의 전문가와 1시간 미팅이 가능하며, 인원 추가 시 비용이 발생합니다. <br> (1명의 전문가와 약 1시간의 미팅 제공)</p>
+							<div class="badge-list">
+								<span class="badge badge-lg badge-selection">미팅 신청</span>
+								<span class="badge badge-lg badge-selection">선정중</span>
+							</div>
+						</div>
+					</li>
+					<li class="data-item">
+						<div class="data-head">온라인 계약</div>
+						<div class="data-body">
+							<p class="para">선정된 전문가님과 온라인 계약을 체결하는 단계입니다. 온라인 계약 완료 후, Client는 최대 1개월분의 프로젝트 대금을 탤런트뱅크에 예치합니다.</p>
+							<div class="badge-list">
+								<span class="badge badge-lg badge-contract">계약중</span>
+								<span class="badge badge-lg badge-contract">계약 완료</span>
+							</div>
+						</div>
+					</li>
+					<li class="data-item">
+						<div class="data-head">완료 및 평가</div>
+						<div class="data-body">
+							<p class="para">계약이 체결되면 계약 내용에 따라 프로젝트를 진행합니다. 프로젝트 완료 시 Client님과 전문가님께 최종 확인을 받고 전문가님께 대금을 지불합니다.</p>
+							<div class="badge-list">
+								<span class="badge badge-lg badge-appraisal">진행중</span>
+								<span class="badge badge-lg badge-appraisal">완료</span>
+							</div>
+						</div>
+					</li>
+					<li class="data-item">
+						<div class="data-head">중단</div>
+						<div class="data-body">
+							<p class="para">프로젝트 승인 시 미승인 되거나 사정에 따라서 중단된 프로젝트입니다.</p>
+							<div class="badge-list">
+								<span class="badge badge-lg badge-interruption">미승인</span>
+								<span class="badge badge-lg badge-interruption">중단</span>
+								<span class="badge badge-lg badge-interruption">미팅 중단</span>
+								<span class="badge badge-lg badge-interruption">상담 종료</span>
+							</div>
+						</div>
+					</li>
+				</ul>
+				<ul class="data-list theme-a text-muted">
+					<li class="data-item">의뢰한 Client님과 지원한 전문가님께만 프로젝트 세부 상태가 표시됩니다.</li>
+					<li class="data-item">지원하시지 않은 전문가님 및 비회원님께는 <strong>[선정/계약] 단계부터 모든 프로젝트 상태</strong>가 <span class="badge badge-lg badge-info">모집완료</span> 로 표시됩니다.</li>
+				</ul>
+			</div>
+		</div>
+		<button type="button" class="close" onclick="$('.project-status-guide').removeClass('active');"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><title>닫기</title><path d="M12 11.293l10.293-10.293.707.707-10.293 10.293 10.293 10.293-.707.707-10.293-10.293-10.293 10.293-.707-.707 10.293-10.293-10.293-10.293.707-.707 10.293 10.293z"></path></svg></button>
+	</div>
+</div>
+
+<!-- pm제도  -->
+<div class="layer-popup layer-popup-custom theme-a type-a project-manager-pop" id="pmServicePopup">
+	<div class="popup-page-body">
+		<div class="popup-local-head"><h2 class="popup-name">BD (Business Director) 제도란?</h2></div>
+		<div class="popup-local-body">
+			<div class="popup-content-body">
+				<div class="project-manager-body">
+					<h4><span>BD (Business Director)제도란,</span></h4>
+					<p class="desc-text">프로젝트의 성공적인 수행을 위해 전담 매니저가 <strong>프로젝트의 시작부터 끝까지 동행</strong>하는<br><strong>프로젝트 management service</strong> 입니다.<br>이는 업계에서 유일하게 제공하는 서비스로 탤런트뱅크 고객 만족도의 척도가 되고 있습니다.</p>
+					<div class="project-manager-text">
+						<p>탤런트뱅크 BD님들은 <span>30여 년간 대기업 및 중소기업</span>의 다양한 분야에서 풍부한 경험을 쌓은 <span>Senior 로 구성</span>되어 있습니다.<br><br>신사업, 경영, 투자, 마케팅, IT 등 분야별 전문성을 기반으로 <span>임원 및 최고관리자</span>의 자리까지 역임하신 분들이며, ‘기업의 성공을 돕는다.’ 는 사명감과 자부심으로 탤런트뱅크와 함께하고 계십니다.</p>
+						<p>BD님들은 Client님이 의뢰하신 프로젝트의 구체화, 전문가 매칭, Client-전문가 양자간의 계약 조건 조율 등 <span>프로젝트의 전 과정</span>을 함께하며 만족도 높은 경험과 서비스를 제공합니다. </p>
+					</div>
+				</div>
+				<div class="pop-agree-footer bt-0">
+					<button onclick="$('.project-manager-pop').removeClass('active');" class="btn btn-primary">확인</button>
+				</div>
+			</div>
+		</div>
+		<button type="button" class="close" onclick="$('.project-manager-pop').removeClass('active');"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><title>닫기</title><path d="M12 11.293l10.293-10.293.707.707-10.293 10.293 10.293 10.293-.707.707-10.293-10.293-10.293 10.293-.707-.707 10.293-10.293-10.293-10.293.707-.707 10.293 10.293z"></path></svg></button>
+	</div>
+</div>
+
+<!-- 전문가 찾기 : modal modal-client find-expert -->
+<div class="modal modal-common find-expert" id="recruitPop" style="display:none;"></div>
+
+<!--매니저 메시지 답장 popup-->
+<div class="modal modal-common modal-v2" id="messagePop" style="display:none;"></div>
+
+<!--프로젝트 상담하기 / 의뢰하기 요청 팝업-->
+<div class="modal modal-client individual-info-pop" id="projectRegPopup"></div>
+
+<!--FAQ popup-->
+<div class="layer-popup layer-popup-custom theme-a type-a project-faq-pop" id="faqPopup"></div>
+
+<!--로그인 popup-->
+<div class="layer-popup layer-popup-custom theme-a type-a login-pop" id="loginPopup"></div>
+
+<!--엑스퍼트 제안보기 팝업-->
+<div class="layer-popup layer-popup-custom theme-a type-a expert-suggestion-pop" id="solutionPopup"></div>
+
+<!--사전 질문 팝업-->
+<div class="modal modal-common beforehand-question-popup" id="consultQuestionPopup"></div>
+
+<!--예약 취소 팝업-->
+<div class="layer-popup layer-popup-custom theme-a type-a advisory-qna-pop" id="consultCancelPopup"></div>
+
+
+<div class="layer-popup layer-popup-custom receipt-pop" id="consultClientInvoicePopup"></div>
+
+
+<div class="modal modal-client advisory-review-popup" id="consultClientReviewPopup"></div>
+
+
+<div class="modal modal-v3 terms-popup" id="termsPopup"></div>
+
+
+<div class="modal modal-v3 terms-popup" id="recruitServicePopup" style="z-index: 1000"></div>
+
+
+<div class="modal modal-common beforehand-question-popup" id="recruitFormPopup"></div>
+
+
+<div class="modal modal-client individual-info-pop seminar-info-pop" id="applyPopup"></div>
+
+<!--v6. 예약 취소 팝업-->
+<div class="layer-popup layer-popup-custom theme-a type-a advisory-qna-pop v6" id="counselCancelPopup"></div>
+
+
+<div class="modal modal-client advisory-review-popup v6" id="counselClientReviewPopup"></div>
+
+<!--v6. 예약 수정하기 팝업-->
+<div class="modal modal-common beforehand-question-popup v6" id="counselModifyPopup"></div>
+
+<!--v6. Expert 답변 팝업-->
+<div class="layer-popup layer-popup-custom theme-a type-a advisory-qna-pop v6" id="counselAnswerPopup"></div>
+
+<!--v6. Expert 거절 팝업-->
+<div class="layer-popup layer-popup-custom theme-a type-a advisory-qna-pop v6" id="counselRejectPopup"></div>
+
+<!--v6. Expert 후기 조회 팝업-->
+<div class="modal modal-common modal-advisory-review-reg v6" id="counselExpertReviewPopup"></div>
+
+<!--v6. Expert 후기 등록 팝업-->
+<div class="modal modal-common modal-advisory-review-reg v6" id="createExpertReviewPopup"></div>
+
+<!--v6. Expert 정산 상세 팝업-->
+<div class="layer-popup layer-popup-custom theme-a type-a calculate-amount-popup" id="expertCreditDetailPopup"></div>
+
+
+<div class="layer-popup layer-popup-custom receipt-pop receipt-pop v6" id="counselClientInvoicePopup"></div>
+
+
+<div class="modal modal-v3 terms-popup" id="counselConfidentialityAgreementPopup"></div>
+
+<script type="text/javascript">
+var openOpt = { backdrop:true, backdropClick:true, keyboard:true, positionFixed:true };
+
+// 경고 열기
+$('#alertOpen').on('click',function() {
+	$('#alertPop').popup(openOpt);
+});
+// 확인
+$('#confirmOpen').on('click',function() {
+	$('#confirmPop').popup(openOpt);
+});
+$('#alertBtn').on('click',function() {
+	$('#alertPop').popup({ show : false });
+});
+$('#confirmBtn1').on('click',function() {
+	$('#confirmPop').popup({ show : false });
+});
+$('#confirmUpBtn1').on('click',function() {
+	$('#confirmPopup').popup({ show : false });
+});
+
+//new 팝업 확인할때..
+$('#popBtn1').on('click',function() {
+	$('#checkPopup').popup({ show : false });
+});
+$('#popBtn2').on('click',function() {
+	$('#checkPopup').popup({ show : false });
+});
+
+//경고 다이얼로그 오픈
+function gf_alertOpen(content) {
+	$("#alertContent").html(content);
+	$('#alertPop').popup(openOpt);
+	$(".popup-backdrop").css("z-index", "999");
+}
+
+// 확인 다이얼로그 오픈
+function gf_confirmOpen(content, btnName) {
+	$("#confirmContent").html(content);
+	if(btnName != undefined && btnName != "")
+		$("#confirmBtn2").html(btnName);
+	$('#confirmPop').popup(openOpt);
+	$(".popup-backdrop").css("z-index", "999");
+}
+
+// 경고 다이얼로그 오픈
+function gf_alertPop(content, icon) {
+	$("#alertContent").html(content);
+	$('#alertPop').popup(openOpt);
+	lf_popIconSet(icon, "alertPopBackdrop");
+}
+
+// 확인 다이얼로그 오픈
+function gf_confirmPop(content, btnName, icon) {
+	$("#confirmContent").html(content);
+	if(btnName != undefined && btnName != "")
+		$("#confirmBtn2").html(btnName);
+	$('#confirmPop').popup(openOpt);
+	lf_popIconSet(icon, "confirmPopBackdrop");
+}
+
+//확인 다이얼로그 오픈 (버튼3개)
+function gf_confirmPopup(content, btnName, btnName2, icon) {
+	$("#confirmUpContent").html(content);
+	if(btnName != undefined && btnName != "")
+		$("#confirmUpBtn2").html(btnName);
+	if(btnName2 != undefined && btnName2 != "")
+		$("#confirmUpBtn3").html(btnName2);
+	$('#confirmPopup').popup(openOpt);
+	lf_popIconSet(icon, "confirmPopupBackdrop");
+}
+
+// 다이얼로그 아이콘 set
+function lf_popIconSet(icon, backdropId) {
+	if(icon == "notice") {
+		$(".popicon").removeClass().addClass("icon popicon icon-alert-exclamation");
+	} else if(icon == "info") {
+		$(".popicon").removeClass().addClass("icon popicon icon-alert-info");
+	} else if(icon == "confirm") {
+		$(".popicon").removeClass().addClass("icon popicon icon-alert-check");
+	} else if(icon == "question") {
+		$(".popicon").removeClass().addClass("icon popicon icon-alert-question");
+	} else if(icon == "sorry") {
+		$(".popicon").removeClass().addClass("icon popicon icon-alert-caution");
+	}
+	$("#" + backdropId).css("z-index", "999"); // backdrop 의 z-index 조정...
+}
+
+// 모집기간 팝업
+function gf_expertOnly() {
+	$('#myPopup1').popup({backdrop:true,backdropClick:true,keyboard:true,positionFixed:true});
+}
+
+//다이얼로그 열기
+function gf_openPop(eleId) {
+	$('#'+eleId).popup({backdrop:true,backdropClick:true,keyboard:true,positionFixed:true});
+}
+
+//다이얼로그 닫기
+function gf_closePop(eleId) {
+	$('#'+eleId).popup({show:false});
+	$("#" + eleId + "Backdrop").remove();
+	$('body').removeClass('modal-open');
+	$('body').removeClass('no-scroll');
+	$('body').css('overflow', '');
+	$('body').removeClass('active-info-disclosure');
+}
+
+/**
+ * 다이얼로그 닫기 - 닫고 backdrop 까지 remove
+ * @author kjs
+ * @date 2019-03-12
+ */
+function gf_closePop2(eleId) {
+	$('#' + eleId).popup({show:false});
+	$("#" + eleId + "Backdrop").remove();
+}
+
+//로그인 탭 선택
+function lf_setServiceType(val) {
+	$("#serviceTypeCode").val(val);
+}
+</script>
+
+
+<script type="text/javascript">
+function gohome() {
+	document.location.href = "/?root=OK";
+}
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- End Channel Plugin -->
+
+
+
+
+<script type="text/javascript">
+//브라우저당 쿠키 생성 한번
+function openWinB( winName ) {
+	var blnCookie = getCookie( winName );
+	if( !blnCookie ) {
+		$('#'+ winName).popup({
+				backdrop: true,
+				backdropClick: true,
+				keyboard: true,
+				positionFixed: false
+			});
+		setInstantCookie(winName, "done");
+	}
+}
+
+// 창열기 : 하루에 한번
+function openWin( winName ) {
+	var blnCookie = getCookie( winName );
+	if( !blnCookie ) {
+		$('#'+ winName).popup({
+				backdrop: true,
+				backdropClick: true,
+				keyboard: true,
+				positionFixed: false
+			});
+		setCookie(winName, "done" , 1);
+	}
+}
+
+// 창닫기  
+function closeWin(winName, expiredays) {
+	setCookie( winName, "done" , expiredays);
+	gf_closePop(winName);
+}
+
+function closeWinAt00(winName, expiredays) {
+	setCookieAt00( winName, "done" , expiredays);
+	var obj = eval( "window." + winName );
+	obj.style.display = "none";
+}
+
+// 쿠키 가져오기  
+function getCookie( name ) {  
+	var nameOfCookie = name + "=";  
+	var x = 0;  
+	while ( x <= document.cookie.length ) {
+		var y = (x+nameOfCookie.length);  
+		if ( document.cookie.substring( x, y ) == nameOfCookie ) {
+			if ( (endOfCookie=document.cookie.indexOf( ";", y )) == -1 )
+				endOfCookie = document.cookie.length;
+			return unescape( document.cookie.substring( y, endOfCookie ) );
+		}
+		x = document.cookie.indexOf( " ", x ) + 1;
+		if ( x == 0 )
+			break;
+	}
+	return "";
+}
+
+//기본 쿠키 설정하기  
+function setInstantCookie(name, value) {
+	document.cookie = name + "=" + escape( value ) + "; path=/;"; 
+}
+
+// 24시간 기준 쿠키 설정하기  
+// expiredays 후의 클릭한 시간까지 쿠키 설정  
+function setCookie( name, value, expiredays ) {
+	let date = new Date();
+    date.setTime(date.getTime() + (expiredays * 24 * 60 * 60 * 1000));
+    const expires = "expires=" + date.toUTCString();
+    document.cookie = name + "=" + value + "; " + expires + "; path=/";
+    
+	//var todayDate = new Date();   
+	//todayDate.setDate( todayDate.getDate() + expiredays );
+	//document.cookie = name + "=" + escape( value ) + "; path=/; expires=" + todayDate.toGMTString() + ";"
+}
+
+// 00:00 시 기준 쿠키 설정하기  
+// expiredays 의 새벽  00:00:00 까지 쿠키 설정  
+function setCookieAt00( name, value, expiredays ) {
+	var todayDate = new Date();
+	todayDate = new Date(parseInt(todayDate.getTime() / 86400000) * 86400000 + 54000000);
+	if ( todayDate > new Date() ) {
+		expiredays = expiredays - 1;
+	}
+	todayDate.setDate( todayDate.getDate() + expiredays );   
+	document.cookie = name + "=" + escape( value ) + "; path=/; expires=" + todayDate.toGMTString() + ";"
+}
+</script>
+
+
+
+
+
+<script src="assets/mirror/10de2111f13aaca23eb7.js"></script>
+<script src="assets/mirror/9dc2448d8887fe08cf6b.js"></script>
+<script src="assets/mirror/da960c786e824a6f604f.js"></script>
+<link rel="stylesheet" href="assets/mirror/70361f48981fbd8fade3.css">
+
+<!-- Global site tag (gtag.js) - Google Ads: 823488311 -->
+
+
+
+<!-- 카카오모먼트 픽셀 설치  -->
+
+	
+	
+
+</head>
+
+<body>
+
+<div class="spinner02" style="display: none">
+	<div class="bounce1"></div><div class="bounce2"></div><div class="bounce3"></div>
+</div>
+
+<!-- Google Tag Manager (noscript) -->
+
+	
+
+
+<!-- End Google Tag Manager (noscript) -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="popup popup-alert popup-alert-wrap" id="usingPcPop" style="display: none; z-index:1000;">
+	<div class="popup-content">
+		<div class="popup-body for-expert">
+			<div class="popup-alert-icon">
+				<i class="icon icon-alert-info"></i>
+			</div>
+			<div class="popup-alert-title">안녕하세요, 전문가님!</div>
+			<div class="popup-alert-text">
+				프로필 등록은 PC 환경에서<br>
+				보다 쉽게 등록하실 수 있습니다.<br>
+				프로필 등록이 어려우시면,<br>
+				PC를 이용해주세요.
+			</div>
+			<div class="popup-alert-footer">
+				<div class="button-area">
+					<button type="button" class="btn btn-lg btn-expert" data-dismiss="popup" onclick="lf_closeChk();">확인</button>
+				</div>
+			</div>
+			<div class="popup-alert-check">
+				<div class="tbchkbox-variable">
+					<input type="checkbox" id="chk7day">
+					<label class="tbchkbox-label" for="chk7day">
+						<span class="tbchkbox-span expert"></span>7일간 보지 않기
+					</label>
+				</div>
+			</div>
+			<button type="button" class="btn btn-popup-close" data-dismiss="popup" onclick="closeWin('usingPcPop', 1); ">닫기</button>
+		</div>
+	</div>
+</div>
+
+
+<div class="popup popup-alert popup-alert-wrap popup-splash" id="loadingPopup" style="display: none; z-index:1000;">
+	<div class="popup-content">
+		<div class="popup-body">
+			<div class="popup-splash-icon">
+				<img src="assets/mirror/f0c882c86fc77c755bd2.gif">
+			</div>
+			<div class="popup-alert-text">
+				프로젝트와 매칭되는 전문가님께<br />
+				지원 알림을 발송하는 중입니다!
+			</div>
+			<div class="popup-alert-text2">
+				잠시만 기다려주세요.
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="popup popup-alert alert-service-end" id="solutionEndPopup" style="display: none; z-index:1000;">
+	<div class="popup-content">
+		<div class="popup-body">
+			<div class="popup-alert-text">
+				Expert’s 제안 서비스가 종료되었습니다.
+			</div>
+			<div class="popup-alert-text-box">
+				<div class="text-sm">
+					<p>안녕하세요, 전문가님.</p>
+					<p><strong>2021년 02월 09일부로<br>Expert’s 제안 서비스가 종료되었습니다.</strong></p>
+					<p>
+						02월 09일 이후부터는<br>
+						새로운 제안을 등록하실 수 없으며,<span class="wbr"><span class="wbr">기존에</span>
+						등록하신 제안도 수정하실 수 없습니다.</span>
+					</p>
+					<p>
+						그동안 Expert’s 제안 서비스를 이용해주신<br>
+						 전문가님께 감사의 말씀을 드립니다.<br>
+						곧 더 좋은 서비스로 찾아뵙겠습니다.
+			 		</p>
+					<p>감사합니다.</p>
+				</div>
+				<div class="cs">
+					고객센터 1833-4730
+				</div>
+				<p class="text-detail">상담시간 : 09:00 ~ 18:00 (토/일/공휴일 휴무)</p>
+			</div>
+			<div class="popup-alert-footer">
+				<button type="button" class="btn btn-expert" data-dismiss="popup">확인</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="popup popup-alert popup-alert-wrap" id="checkPopup" style="display: none; z-index:1000;">
+	<div class="popup-content">
+		<div class="popup-body ">
+			<div class="popup-alert-icon">
+				<i class="icon icon-alert-info" id="popIcon"></i>
+			</div>
+			<div class="popup-alert-title" id="popTitle"></div>
+			<div class="popup-alert-text" id="popContent"></div>
+			<div class="popup-alert-footer">
+				<div class="button-area">
+					<button type="button" class="btn btn-lg btn-secondary" id="popBtn1"></button>
+					<button type="button" class="btn btn-lg btn-client" id="popBtn2"></button>
+				</div>
+			</div>
+			<button type="button" class="btn btn-popup-close" data-dismiss="popup">닫기</button>
+		</div>
+	</div>
+</div>
+
+
+<div class="popup popup-alert popup-alert-wrap" id="alertPopup" style="display: none; z-index:1000;">
+	<div class="popup-content">
+		<div class="popup-body ">
+			<div class="popup-alert-icon">
+				<i class="icon icon-alert-info" id="popupIcon"></i>
+			</div>
+			<div class="popup-alert-title" id="popupTitle"></div>
+			<div class="popup-alert-text" id="popupContent"></div>
+			<div class="popup-alert-footer">
+				<div class="button-area">
+					<button type="button" class="btn btn-lg btn-client" id="popupBtn" data-dismiss="popup"></button>
+				</div>
+			</div>
+			<button type="button" class="btn btn-popup-close" data-dismiss="popup">닫기</button>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+
+function gf_loadingPopup() {
+	$('#loadingPopup').popup({ backdrop:true, backdropClick:false, keyboard:false, positionFixed:true });
+}
+
+
+function gf_checkPopup(title, content, btnName1, btnName2, icon) {
+	$("#popTitle").html(title);
+	$("#popContent").html(content);
+	if(btnName1 != undefined && btnName1 != ""){
+		$("#popBtn1").html(btnName1);
+		$("#popBtn1").show();
+		$("#popBtn2").removeClass("w100");
+	} else {
+		$("#popBtn1").hide();
+		$("#popBtn2").addClass("w100");
+	}
+	if(btnName2 != undefined && btnName2 != "")
+		$("#popBtn2").html(btnName2);
+	$('#checkPopup').popup(openOpt);
+
+	lf_popIconSetting('popIcon', icon, "confirmPopBackdrop");
+}
+
+
+function gf_alertPopup(title, content, btnName, icon) {
+	$("#popupTitle").html(title);
+	$("#popupContent").html(content);
+	$("#popupBtn").addClass("w100");
+	if(btnName != undefined && btnName != "")
+		$("#popupBtn").html(btnName);
+	$('#alertPopup').popup(openOpt);
+
+	lf_popIconSetting('popupIcon', icon, "confirmPopBackdrop");
+}
+
+
+function gf_confirmPopClose() {
+	gf_closePop("checkPopup");
+}
+
+
+function gf_alertPopClose() {
+	gf_closePop("alertPopup");
+}
+
+
+function lf_popIconSetting(iconId, icon, backdropId) {
+	if(icon == "notice") {
+		$("#"+iconId).removeClass().addClass("icon icon-alert-warning");
+	} else if(icon == "info") {
+		$("#"+iconId).removeClass().addClass("icon icon-alert-info");
+	} else if(icon == "question") {
+		$("#"+iconId).removeClass().addClass("icon icon-alert-question");
+	} else if(icon == "sorry") {
+		$("#"+iconId).removeClass().addClass("icon icon-alert-sorry");
+	} else { //confirm
+		$("#"+iconId).removeClass().addClass("icon icon-alert-check");
+	}
+	$("#" + backdropId).css("z-index", "999"); // backdrop 의 z-index 조정...
+}
+
+function lf_closeChk(){
+	if($("#chk7day").is(":checked")) {
+		closeWin('usingPcPop', 7);
+	} else {
+		closeWin('usingPcPop', 1);
+	}
+}
+</script>
+
+
+	
+	
+		
+	
+
+
+
+
+<div id="page" class="for-client " >
+	<!-- page-head -->
+	<div class="page-head-wrap">
+		<!-- V6.0 page-head-wrap -->
+		<div class="page-head page-head-v5">
+			<h1 class="page-name">Talentbank</h1>
+		</div>
+	</div>
+	
+	<!-- //page-head -->
+	<hr />
+	<!-- page-body -->
+	
+	<div class="page-body page-body-v5  landing-page " id="local">
+		
+		<div class="app-install-banner">
+			<p class="text">
+				탤런트뱅크 앱으로<br>
+				더 편하게 이용하세요!
+			</p>
+			<a href="javascript:void(0);" onclick="lf_appLink();" class="link-app">앱으로 보기</a>
+			<button class="btn btn-banner-close"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"><title>닫기</title><path d="M12 11.293l10.293-10.293.707.707-10.293 10.293 10.293 10.293-.707.707-10.293-10.293-10.293 10.293-.707-.707 10.293-10.293-10.293-10.293.707-.707 10.293 10.293z"></path></svg></button>
+		</div>
+		
+
+		<!-- local-head -->
+		
+		
+
+
+
+
+
+
+
+
+<!-- 221208 이벤트 팝업 -->
+
+<script>
+	function lf_projectApply(op) {
+		$("#popBtn2").off().click(function() {
+			window.open("/menu/expertInfo", '_blank');
+		});
+	}
+	// 통합검색 페이지(/search) 인 경우에만 검색어 입력
+	
+	
+		
+		
+			
+		
+	
+</script>
+
+<style>
+	.rounded-full{
+		border-radius: 50px !important;
+	}
+	.service-btn-main{
+		display: flex;
+		align-items: end;
+		height: 100%;
+	}
+	.service-btn-mobile {
+		width: 100%;
+		min-width: 100%;
+		display: flex;
+
+		justify-content: center;
+	}
+	.service-btn{
+		display: flex;
+		align-items: end;
+		height: 100%;
+	}
+
+	.grow{
+		flex-grow: 1;
+	}
+	.flex-col{
+        display: flex;
+		flex-flow: column;
+
+	}
+	.w-full{
+		width: 100%;
+	}
+
+	@media (min-width: 992px) {
+		.service-btn-mobile {
+			display: none;
+		}
+		.btn.btn-sm.btn-pill.mobile {
+		display: none;
+
+		}
+		.local-side {
+			position: absolute;
+			margin-left: 24px;
+			right: 0px;
+			height: 70px;
+			/*display: none;*/
+			/*height: 100%;*/
+		}
+		#page.for-client .page-body.page-body-v5 .local-head-wrap .local-head .local-head-item .local-side.client-side-login .login-client-v6 {
+			top: 145.99px;
+			right: 0px;
+		}
+		#page.for-client .page-body.page-body-v5 .local-head-wrap .local-head .local-head-item .local-side.expert-side-login .login-expert {
+			top: 145.99px;
+			right: 0px;
+		}
+		.btn.btn-sm.btn-pill {
+			padding: 10px 40px;
+			max-width: 160.59px;
+		}
+	}
+	@media (max-width: 991px) {
+		#page.for-client .page-body.page-body-v5 .local-head-wrap .local-head .local-control {
+			align-items: center;
+			margin-left: 9px;
+		}
+
+
+			.btn.btn-sm.btn-pill.mobile {
+				width: 80%;
+				margin-top: 20px;
+
+			}
+
+		.service-btn-main{
+			display: none;
+		}
+		@media (max-width: 676px) {
+
+
+		/*	버튼 아이콘화*/
+
+		}
+
+	}
+
+</style>
+
+
+<!-- local-head -->
+<div class="local-head-wrap">
+	<div class="local-head flex-col">
+
+		<div class="local-head-item w-full">
+			<div class="local-name">
+				<div class="mobile-icon">
+					<h2 class="text">
+						<a href="/?root=OK">
+							<svg width="152" height="24" viewBox="0 0 152 24" fill="none" xmlns="http://www.w3.org/2000/svg"> <g id="Frame" clip-path="url(#clip0_392_1700)"> <g id="Group"> <path id="Vector" d="M45.0287 23.5798H49.0838L49.0946 15.9438C49.0946 12.8571 46.6008 10.6256 43.5249 10.6256H37.603V13.6818C37.603 13.9836 37.8473 14.228 38.1492 14.228H43.5554C44.3639 14.228 45.0215 14.8838 45.0215 15.6941V15.836H39.529C37.7341 15.836 36.2788 17.2967 36.2788 19.0988V20.6278C36.2788 22.4245 37.7305 23.5923 39.52 23.5923H41.9761C43.0937 23.5079 44.3495 23.1306 45.0305 22.4496V23.5798H45.0287ZM40.3501 19.1294C40.3501 18.7036 40.6951 18.3586 41.1209 18.3586H44.8706C44.9532 18.3586 45.0197 18.4251 45.0197 18.5077V20.2757C45.0197 20.3583 44.9532 20.4248 44.8706 20.4248H41.1173C40.6933 20.4248 40.3483 20.0816 40.3483 19.6558V19.1294H40.3501Z" fill="#0064B2" /> <path id="Vector_2" d="M117.949 23.5798H122.004L122.015 15.9438C122.015 12.8571 119.521 10.6256 116.445 10.6256H110.523V13.6818C110.523 13.9836 110.768 14.228 111.07 14.228H116.481C117.288 14.228 117.942 14.882 117.942 15.6887V15.836H112.449C110.655 15.836 109.199 17.2967 109.199 19.0988V20.6278C109.199 22.4245 110.651 23.5923 112.44 23.5923H114.897C116.014 23.5079 117.27 23.1306 117.951 22.4496V23.5798H117.949ZM113.271 19.1294C113.271 18.7036 113.615 18.3586 114.041 18.3586H117.791C117.874 18.3586 117.94 18.4251 117.94 18.5077V20.2757C117.94 20.3583 117.874 20.4248 117.791 20.4248H114.038C113.614 20.4248 113.269 20.0816 113.269 19.6558V19.1294H113.271Z" fill="#0064B2" /> <path id="Vector_3" d="M31.8626 9.61948H37.2329V6.20577C37.2329 5.96322 37.037 5.76738 36.7945 5.76738H22.748C22.5054 5.76738 22.3096 5.96322 22.3096 6.20577V9.61948H27.6799V23.5923H31.8626V9.61948Z" fill="#0064B2" /> <path id="Vector_4" d="M54.9627 5.77995H51.328C51.0855 5.77995 50.8896 5.97579 50.8896 6.21835V23.5923H54.9627V5.77995Z" fill="#0064B2" /> <path id="Vector_5" d="M90.1885 14.2046H93.6651V10.6328H90.1885V7.63773H86.5538C86.3112 7.63773 86.1154 7.83357 86.1154 8.07613V10.6328H84.1768V14.2046H86.1154V23.5923H90.1885V14.2046Z" fill="#0064B2" /> <path id="Vector_6" d="M147.965 16.844L151.648 10.6328H147.05L144.698 14.5999C144.545 14.8586 144.267 15.0167 143.969 15.0167H143.056V5.77995H139.421C139.179 5.77995 138.983 5.97579 138.983 6.21835V23.5923H143.056V18.5382H144.093C144.308 18.5382 144.51 18.6514 144.621 18.8365L147.512 23.5923H152L147.965 16.844Z" fill="#0064B2" /> <path id="Vector_7" d="M78.0611 10.6149H76.5088C75.3912 10.6993 74.9349 11.0766 74.2557 11.7575V10.6274H70.621C70.3785 10.6274 70.1826 10.8233 70.1826 11.0658V18.0154V23.5923H74.2557V14.6125C74.2557 14.4885 74.3563 14.3897 74.4785 14.3897H77.6712C78.4689 14.3897 79.114 15.0365 79.114 15.8324V23.5923H83.187V15.757C83.187 12.9218 80.8927 10.6238 78.0611 10.6149Z" fill="#0064B2" /> <path id="Vector_8" d="M131.876 10.6149H130.323C129.206 10.6993 128.749 11.0766 128.07 11.7575V10.6274H124.435C124.193 10.6274 123.997 10.8233 123.997 11.0658V18.0154V23.5923H128.07V14.6125C128.07 14.4885 128.171 14.3897 128.293 14.3897H131.486C132.283 14.3897 132.928 15.0365 132.928 15.8324V23.5923H137.001V15.757C137.001 12.9218 134.709 10.6238 131.876 10.6149Z" fill="#0064B2" /> <path id="Vector_9" d="M103.597 10.6217H101.127C100.009 10.7061 99.553 11.0852 98.8739 11.7662V5.77422H95.2392C94.9966 5.77422 94.8008 5.97006 94.8008 6.21261V23.592H98.8739V22.4565C99.5494 23.132 100.681 23.504 101.792 23.592H104.965C106.754 23.592 108.206 22.1439 108.206 20.3472V15.2482C108.206 12.6933 106.141 10.6217 103.596 10.6217H103.597ZM104.135 19.023C104.135 19.6339 103.639 20.1298 103.028 20.1298H99.1021C98.9781 20.1298 98.8793 20.0292 98.8793 19.907V14.4217C98.8793 14.2977 98.9799 14.1989 99.1021 14.1989H103.028C103.639 14.1989 104.135 14.6948 104.135 15.3057V19.0248V19.023Z" fill="#0064B2" /> <path id="Vector_10" d="M65.1264 19.4335V19.5251C65.1264 19.9365 64.7941 20.2689 64.3826 20.2689H61.4253C60.6114 20.2689 59.952 19.6095 59.952 18.7956V18.4794H68.8258V15.894C68.8258 12.9115 66.4183 10.4949 63.4483 10.4949H61.6319C58.662 10.4949 56.2544 12.9761 56.2544 15.9569V18.4794C56.2544 21.4619 58.662 23.7132 61.6319 23.7132H63.4483C66.0356 23.7132 68.1898 21.877 68.7037 19.4335H65.1282H65.1264ZM61.4271 14.056H63.6532C64.4671 14.056 65.1264 14.7153 65.1264 15.5292V15.9569H59.952V15.5292C59.952 14.7153 60.6114 14.056 61.4253 14.056H61.4271Z" fill="#0064B2" /> </g> <path id="Vector_11" d="M18.0495 9.2835C18.0495 7.35206 16.4846 5.78714 14.5531 5.78714H9.74517V9.68057H13.1589C13.7105 9.68057 14.1578 10.1279 14.1578 10.6795V12.169C14.1578 12.69 13.759 13.1176 13.2487 13.1643H9.74517V16.2115H13.2487C13.759 16.2565 14.1578 16.6841 14.1578 17.2069V18.6964C14.1578 19.2479 13.7105 19.6953 13.1589 19.6953H5.33789V23.5887H14.5513C16.4828 23.5887 18.0477 22.0238 18.0477 20.0924V17.1638C18.0477 16.2295 17.7261 15.3707 17.1889 14.6915C17.7261 14.0106 18.0477 13.1536 18.0477 12.2193V9.29069L18.0495 9.2835Z" fill="#CDCE00" /> <path id="Vector_12" d="M8.3043 5.78027H3.49636C1.56492 5.78027 0 7.34519 0 9.27663V23.5927H3.89343V10.6727C3.89343 10.1211 4.3408 9.6737 4.89239 9.6737H8.3061V5.78027H8.3043Z" fill="#0064B2" /> <path id="Vector_13" d="M10.9632 0H7.69507C7.35011 0 7.06982 0.280284 7.06982 0.625248V3.89343H10.9632V0Z" fill="#0064B2" /> </g> <defs> <clipPath id="clip0_392_1700"> <rect width="152" height="23.7127" fill="white" /> </clipPath> </defs> </svg>
+						</a>
+					</h2>
+				</div>
+				<div class="desktop-icon">
+					<a href="/?root=OK">
+						<svg width="172" height="27" viewBox="0 0 172 27" fill="none" xmlns="http://www.w3.org/2000/svg" > <g id="Frame" clip-path="url(#clip0_210_3295)"> <g id="Group"> <path id="Vector" d="M50.9535 26.6825H55.5422L55.5544 18.0418C55.5544 14.549 52.7324 12.0239 49.2518 12.0239H42.5507V15.4822C42.5507 15.8237 42.8272 16.1002 43.1687 16.1002H49.2863C50.2012 16.1002 50.9453 16.8423 50.9453 17.7592V17.9198H44.7301C42.6991 17.9198 41.0523 19.5728 41.0523 21.6119V23.3421C41.0523 25.3752 42.695 26.6967 44.72 26.6967H47.4992C48.7638 26.6012 50.1849 26.1742 50.9555 25.4037V26.6825H50.9535ZM45.6593 21.6465C45.6593 21.1647 46.0496 20.7743 46.5315 20.7743H50.7745C50.8681 20.7743 50.9433 20.8495 50.9433 20.9431V22.9436C50.9433 23.0371 50.8681 23.1124 50.7745 23.1124H46.5274C46.0476 23.1124 45.6572 22.7241 45.6572 22.2422V21.6465H45.6593Z" fill="#0064B2" /> <path id="Vector_2" d="M133.469 26.6825H138.057L138.07 18.0418C138.07 14.549 135.248 12.0239 131.767 12.0239H125.066V15.4822C125.066 15.8237 125.342 16.1002 125.684 16.1002H131.808C132.721 16.1002 133.461 16.8403 133.461 17.7531V17.9198H127.245C125.214 17.9198 123.568 19.5728 123.568 21.6119V23.3421C123.568 25.3752 125.21 26.6967 127.235 26.6967H130.014C131.279 26.6012 132.7 26.1742 133.471 25.4037V26.6825H133.469ZM128.175 21.6465C128.175 21.1647 128.565 20.7743 129.047 20.7743H133.29C133.383 20.7743 133.459 20.8495 133.459 20.9431V22.9436C133.459 23.0371 133.383 23.1124 133.29 23.1124H129.043C128.563 23.1124 128.173 22.7241 128.173 22.2422V21.6465H128.175Z" fill="#0064B2" /> <path id="Vector_3" d="M36.0549 10.8853H42.1319V7.02244C42.1319 6.74798 41.9103 6.52637 41.6358 6.52637H25.741C25.4666 6.52637 25.245 6.74798 25.245 7.02244V10.8853H31.3219V26.6967H36.0549V10.8853Z" fill="#0064B2" /> <path id="Vector_4" d="M62.1946 6.54053H58.0816C57.8071 6.54053 57.5855 6.76214 57.5855 7.0366V26.6967H62.1946V6.54053Z" fill="#0064B2" /> <path id="Vector_5" d="M102.055 16.0735H105.989V12.0318H102.055V8.64258H97.9424C97.6679 8.64258 97.4463 8.86419 97.4463 9.13865V12.0318H95.2526V16.0735H97.4463V26.6965H102.055V16.0735Z" fill="#0064B2" /> <path id="Vector_6" d="M167.434 19.0603L171.601 12.0319H166.399L163.737 16.521C163.565 16.8138 163.249 16.9927 162.912 16.9927H161.879V6.54053H157.766C157.492 6.54053 157.27 6.76214 157.27 7.0366V26.6967H161.879V20.9775H163.052C163.296 20.9775 163.524 21.1056 163.65 21.315L166.921 26.6967H172L167.434 19.0603Z" fill="#0064B2" /> <path id="Vector_7" d="M88.332 12.0117H86.5754C85.3108 12.1072 84.7944 12.5342 84.0259 13.3047V12.0259H79.9129C79.6384 12.0259 79.4168 12.2475 79.4168 12.522V20.386V26.6967H84.0259V16.5353C84.0259 16.395 84.1397 16.2832 84.278 16.2832H87.8908C88.7935 16.2832 89.5234 17.0151 89.5234 17.9158V26.6967H94.1324V17.8304C94.1324 14.6222 91.5361 12.0218 88.332 12.0117Z" fill="#0064B2" /> <path id="Vector_8" d="M149.227 12.0117H147.471C146.206 12.1072 145.69 12.5342 144.921 13.3047V12.0259H140.808C140.534 12.0259 140.312 12.2475 140.312 12.522V20.386V26.6967H144.921V16.5353C144.921 16.395 145.035 16.2832 145.173 16.2832H148.786C149.689 16.2832 150.419 17.0151 150.419 17.9158V26.6967H155.028V17.8304C155.028 14.6222 152.433 12.0218 149.227 12.0117Z" fill="#0064B2" /> <path id="Vector_9" d="M117.228 12.02H114.433C113.168 12.1155 112.652 12.5445 111.883 13.315V6.53467H107.77C107.496 6.53467 107.274 6.75628 107.274 7.03074V26.6969H111.883V25.412C112.648 26.1764 113.929 26.5973 115.185 26.6969H118.776C120.801 26.6969 122.443 25.0582 122.443 23.0251V17.2552C122.443 14.3641 120.107 12.02 117.226 12.02H117.228ZM117.836 21.5267C117.836 22.218 117.275 22.7791 116.584 22.7791H112.142C112.001 22.7791 111.889 22.6653 111.889 22.527V16.32C111.889 16.1797 112.003 16.0679 112.142 16.0679H116.584C117.275 16.0679 117.836 16.629 117.836 17.3202V21.5288V21.5267Z" fill="#0064B2" /> <path id="Vector_10" d="M73.6957 21.9901V22.0938C73.6957 22.5594 73.3196 22.9355 72.854 22.9355H69.5075C68.5865 22.9355 67.8404 22.1893 67.8404 21.2684V20.9105H77.8818V17.9849C77.8818 14.61 75.1575 11.8754 71.7968 11.8754H69.7413C66.3806 11.8754 63.6562 14.6832 63.6562 18.0561V20.9105C63.6562 24.2855 66.3806 26.8329 69.7413 26.8329H71.7968C74.7244 26.8329 77.1621 24.7551 77.7436 21.9901H73.6977H73.6957ZM69.5095 15.905H72.0285C72.9495 15.905 73.6957 16.6512 73.6957 17.5722V18.0561H67.8404V17.5722C67.8404 16.6512 68.5865 15.905 69.5075 15.905H69.5095Z" fill="#0064B2" /> </g> <path id="Vector_11" d="M20.4245 10.5052C20.4245 8.31966 18.6537 6.54883 16.4681 6.54883H11.0275V10.9545H14.8904C15.5146 10.9545 16.0208 11.4608 16.0208 12.085V13.7704C16.0208 14.36 15.5695 14.8439 14.9921 14.8967H11.0275V18.3449H14.9921C15.5695 18.3957 16.0208 18.8796 16.0208 19.4712V21.1566C16.0208 21.7808 15.5146 22.287 14.8904 22.287H6.04034V26.6928H16.4661C18.6516 26.6928 20.4225 24.9219 20.4225 22.7363V19.4224C20.4225 18.3652 20.0585 17.3934 19.4507 16.6249C20.0585 15.8543 20.4225 14.8845 20.4225 13.8273V10.5134L20.4245 10.5052Z" fill="#CDCE00" /> <path id="Vector_12" d="M9.39697 6.54047H3.95641C1.77083 6.54047 0 8.3113 0 10.4969V26.6966H4.40572V12.0766C4.40572 11.4524 4.91196 10.9462 5.53612 10.9462H9.39901V6.54047H9.39697Z" fill="#0064B2" /> <path id="Vector_13" d="M12.406 0H8.70776C8.31741 0 8.00024 0.317163 8.00024 0.707518V4.40572H12.406V0Z" fill="#0064B2" /> </g> <defs> <clipPath id="clip0_210_3295"> <rect width="172" height="26.8328" fill="white" /> </clipPath> </defs> </svg>
+					</a>
+				</div>
+			</div>
+			<!-- data-finder -->
+			<div class="search-form-wrap grow">
+				<form action="search.html" class="local-search local-search-main local-search-v3" id="localSearchMain" onsubmit="return lf_gSearch();" autocomplete="off">
+					<fieldset class="submit-form">
+						<legend>검색 조건 입력 서식</legend>
+						<div class="form-list">
+							<div class="form-item">
+								<div class="form-head">
+									<label class="text" for="localSearchKeyword">검색어</label>
+								</div>
+								<div class="form-body">
+									<div class="form-area">
+										<a href="javascript:void(0);" onclick="gf_back();" class="history-back visible-xs-block visible-sm-block">
+											<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" > <title>뒤로</title> <path d="M17.381,24l1.182-1.158L7.771,11.999L18.563,1.158L17.381,0L5.438,11.999L17.381,24z" fill="white" ></path> </svg>
+										</a>
+										<span class="form">
+											<input type="hidden" name="keywordDetail" value="" />
+											<input type="hidden" name="sortColumn" value="" />
+											<input type="hidden" name="sortType" value="sortType00" />
+											<input type="hidden" name="sortDirection" value="desc" />
+											<input type="search" autocomplete="off" id="localSearchKeyword" name="searchValue" value="" placeholder="통합검색" class="elem on client srchValueAuto">
+											<span class="form-control-clear">검색어 삭제</span>
+										</span>
+										<button type="submit" class="submit">
+											<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" > <g id="icn/Search"> <path id="Serch_icon" fill-rule="evenodd" clip-rule="evenodd" d="M2 7C2 4.243 4.243 2 7 2C9.757 2 12 4.243 12 7C12 9.757 9.757 12 7 12C4.243 12 2 9.757 2 7ZM15.7068 14.293L12.5988 11.185C13.4748 10.016 13.9998 8.57 13.9998 7C13.9998 3.14 10.8588 0 6.99989 0C3.14095 0 0 3.14 0 7C0 10.86 3.14095 14 6.99989 14C8.56887 14 10.0148 13.475 11.1838 12.599L14.2928 15.707C14.4878 15.902 14.7438 16 14.9998 16C15.2558 16 15.5118 15.902 15.7068 15.707C16.0977 15.316 16.0977 14.683 15.7068 14.293Z" fill="#0064B2" /> </g> </svg>
+										</button>
+										<div class="form-group-autocomplete-dropdown" id="autoSearchExpert" style="display: none">
+											<button class="item">자동완성</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</fieldset>
+				</form>
+				<script type="text/javascript">
+					function lf_gSearch() {
+						gf_globalVariableInit();
+						if($("#localSearchKeyword").val().trim() == ""){
+							gf_openToastDefault("검색어를 입력해 주세요.");
+							return false;
+						}
+					}
+				</script>
+			</div>
+			<!-- //data-finder -->
+			<!-- service-btn -->
+			
+
+				
+					<div class="service-btn-main">
+						<a class="btn btn-pill btn-client btn-sm" href="inquiry.html">서비스 문의</a>
+
+					</div>
+				
+				
+			
+			<!-- //service-btn -->
+			<!-- local-control -->
+			<div class="local-control">
+				<span class="local-control-item">
+					<a class="direct-account-area" href="#accountArea"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="18" viewBox="0 0 22 18"><title>계정 정보</title><path d="M22 16v2H0v-2h22zm0-8v2H0V8h22zm0-8v2H0V0h22z"/></svg></a>
+				</span>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+				<span class="local-control-item header-search">
+					<a class="direct-local-search" href="/common/m_search">
+						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 20 20" class="on client"> <path d="M13.314,4.426c-2.455-2.455-6.435-2.455-8.889,0c-2.454,2.454-2.454,6.435,0,8.889c2.22,2.22,5.684,2.425,8.142,0.63l3.186,3.186c0.38,0.38,0.997,0.38,1.376,0c0.38-0.38,0.381-0.997,0-1.377l-3.185-3.186C15.739,10.109,15.534,6.646,13.314,4.426z M11.945,11.945c-1.698,1.698-4.452,1.698-6.15,0c-1.698-1.699-1.698-4.453,0-6.15c1.697-1.698,4.451-1.698,6.15,0C13.643,7.493,13.643,10.247,11.945,11.945z"></path> </svg>
+					</a>
+				</span>
+			</div>
+			<!-- //local-control -->
+			<!-- local-side -->
+			<div class="local-side side-logout v2" id="accountArea" >
+				<div class="account-area logout login-client-v6">
+					<h3>Account Area</h3>
+					<!-- account-item -->
+					<div class="account-item">
+						<!-- account-head -->
+						
+							
+								<div class="account-head">
+									<div class="account-user">
+										<div class="user-face"><span class="avatar"></span></div>
+										<div class="user-main">
+											<div class="user-head">
+												<a class="user-name" href="#accountArea">
+													<span class="wbr">로그인하시면 더 많은 정보와 혜택을</span>
+													<span class="wbr">받아 보실 수 있어요. 지금 시작해보세요 :)</span>
+												</a>
+											</div>
+										</div>
+									</div>
+									<div class="button-area">
+										<a class="btn btn-pill btn-outline-client btn-sm btn-client login" href="login.html">로그인</a>
+										<a class="btn btn-pill btn-client btn-sm signup" href="signup.html">회원가입</a>
+									</div>
+								</div>
+							
+							
+						
+						<!-- //account-head -->
+						<!-- account-body -->
+						<div class="account-body">
+							
+								
+								
+								
+									<div class="account-content">
+										<h4>Account Content</h4>
+										<ul class="data-list">
+											<li class="data-item"><a class="data-name" href="notices.html?noticeCategoryCode=NT_CT002"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path d="M15.25 12.627a.397.397 0 0 1-.146.32.223.223 0 0 1-.191.044L6.717 9.622V3.444L14.91.752a.227.227 0 0 1 .2.05c.088.068.14.185.14.314v11.511zm-10.609 2.25a.398.398 0 0 1-.144.318.218.218 0 0 1-.204.042l-1.325-.372c-.133-.037-.229-.189-.229-.36v-4.256h1.902v4.627zM.75 8.317v-3.59c0-.65.529-1.18 1.18-1.18h4.037V9.5H1.93C1.279 9.5.75 8.97.75 8.32zM15.575.212a.995.995 0 0 0-.869-.18L6.282 2.797H1.93C.866 2.798 0 3.664 0 4.728v3.59c0 1.065.866 1.931 1.93 1.931h.059v4.255c0 .51.319.955.776 1.083l1.326.373a.991.991 0 0 0 .859-.167c.276-.21.441-.553.441-.917V10.25h.878l8.379 3.444a.999.999 0 0 0 .315.054.984.984 0 0 0 .588-.198c.282-.209.449-.553.449-.922V1.117c0-.363-.155-.692-.425-.905z" fill="#212121" fill-rule="evenodd"/></svg><span class="text">공지사항/이벤트 </span></a></li>
+											<li class="data-item"><a class="data-name" href="/common/faq"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path d="M10.203 0C13.4 0 16 2.6 16 5.797a5.72 5.72 0 0 1-.817 2.949l.797 2.353a.375.375 0 0 1-.458.481l-2.506-.715a6.06 6.06 0 0 1-1.587.579C10.846 14.095 8.525 16 5.797 16a5.703 5.703 0 0 1-2.817-.729l-2.502.714a.377.377 0 0 1-.459-.479l.785-2.354A5.73 5.73 0 0 1 0 10.203 5.75 5.75 0 0 1 4.57 4.57 5.754 5.754 0 0 1 10.202 0zM4.428 5.359A5.013 5.013 0 0 0 .75 10.203c0 .973.27 1.906.781 2.698a.377.377 0 0 1 .04.322l-.615 1.846 1.973-.563a.362.362 0 0 1 .298.04c.755.46 1.644.704 2.57.704a5.03 5.03 0 0 0 4.845-3.677 4.943 4.943 0 0 1-.439.021 5.804 5.804 0 0 1-5.798-5.797c0-.139.008-.284.023-.438zM10.203.75a5.018 5.018 0 0 0-4.958 4.189v.003l-.028.163a4.017 4.017 0 0 0-.062.692 5.053 5.053 0 0 0 5.048 5.047c.295 0 .59-.039.871-.077a5.314 5.314 0 0 0 1.705-.63.381.381 0 0 1 .292-.037l1.97.562-.625-1.844a.373.373 0 0 1 .04-.323c.52-.806.794-1.739.794-2.698A5.053 5.053 0 0 0 10.203.75zm2.033 5.689a.375.375 0 0 1 0 .75H8.17a.375.375 0 0 1 0-.75zm0-2.034a.375.375 0 0 1 0 .75H8.17a.375.375 0 0 1 0-.75z" fill="#212121" fill-rule="evenodd"/></svg><span class="text">FAQ</span></a></li>
+											<li class="data-item"><a class="data-name" href="/menu/clientInfo"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 36 48"><path d="M31.737 45.75H5.097C3.528 45.75 2.25 44.472 2.25 42.897C2.25 41.325 3.528 40.044 5.097 40.044H31.737C31.11 40.902 30.771 41.874 30.774 42.897C30.774 43.923 31.11 44.892 31.737 45.75ZM5.097 2.25H15.882V16.875C15.882 17.328 16.158 17.739 16.575 17.913C16.716 17.973 16.863 18 17.007 18C17.301 18 17.586 17.886 17.799 17.673L22.965 12.543L28.125 17.673C28.446 17.994 28.932 18.09 29.352 17.913C29.769 17.739 30.045 17.328 30.045 16.875V2.25H30.906C32.475 2.25 33.75 3.531 33.75 5.103V37.794H5.097C4.044 37.794 3.063 38.115 2.25 38.667V5.103C2.25 3.531 3.528 2.25 5.097 2.25ZM27.795 2.25V14.172L23.757 10.158C23.319 9.723 22.608 9.723 22.173 10.158L18.132 14.172V2.25H27.795ZM35.379 39.927C35.397 39.918 35.4 39.894 35.418 39.885C35.61 39.777 35.766 39.621 35.868 39.423C35.874 39.408 35.889 39.396 35.895 39.381C35.958 39.24 36 39.084 36 38.919V5.103C36 2.289 33.714 0 30.906 0H28.92H17.007H5.097C2.286 0 0 2.289 0 5.103V42.897C0 45.711 2.286 48 5.097 48H34.875C35.397 48 35.85 47.64 35.97 47.133C36.09 46.626 35.844 46.104 35.379 45.87C33.882 45.12 33.024 44.037 33.024 42.897C33.021 41.76 33.882 40.677 35.379 39.927Z" fill="#212121" fill="#212121" fill-rule="evenodd"/></svg><span class="text">이용안내</span></a></li>
+
+
+
+
+
+												
+													<div class="service-btn-mobile">
+														<a class="btn btn-pill btn-client btn-sm mobile" href="inquiry.html">서비스 문의</a>
+													</div>
+
+
+										</ul>
+											
+									</div>
+								
+							
+						</div>
+						<!-- //account-body -->
+					</div>
+					<!-- //account-item -->
+				</div>
+				<!-- //account-area -->
+			</div>
+			<!-- //local-side -->
+		</div>
+		<div class="gnb-wrapper w-full">
+			<!-- //menubar -->
+			<h3>Local Navigations</h3>
+			<div class="swiper-container">
+				<ul class="swiper-wrapper gnb-menu">
+					<li class="swiper-slide gnb-menu-item ">
+						<a class="gnb-menu-name" href="experts.html">전문가 검색</a>
+					</li>
+					<li class="swiper-slide gnb-menu-item active">
+						<a class="gnb-menu-name" href="projects.html">프로젝트</a>
+					</li>
+					<li class="swiper-slide gnb-menu-item ">
+						<a class="gnb-menu-name" href="subscription.html">임원 구독제</a>
+					</li>
+					<li class="swiper-slide gnb-menu-item ">
+						<a class="gnb-menu-name" href="stories.html">성공사례</a>
+					</li>
+					<li class="swiper-slide gnb-menu-item ">
+						<a class="gnb-menu-name" href="recruit.html">인재추천</a>
+					</li>
+					<li class="swiper-slide gnb-menu-item ">
+						<a class="gnb-menu-name" href="seminars.html">세미나</a>
+					</li>
+
+
+
+
+				</ul>
+			</div>
+			<!-- page-util -->
+			<div class="page-util desktop-util-v6">
+				<h2>Go to Service</h2>
+				<ul class="data-list">
+					<li class="data-item notice new">
+						<a class="data-name btn-notice-popup" href="#Notice-popup" onclick="gf_forMemberNotice();">알림</a>
+						
+					</li>
+					<li class="data-item notice new">
+						<a class="data-name" href="notices.html?noticeCategoryCode=NT_CT002">공지사항/이벤트</a>
+						
+					</li>
+					
+						
+							<li class="data-item notice"><a class="data-name" href="login.html?serviceTypeCode=SVC_TY002">로그인</a></li>
+							<li class="data-item notice"><a class="data-name" href="signup.html">회원가입</a></li>
+						
+						
+					
+				</ul>
+			</div>
+			<!-- //page-util -->
+
+		</div>
+
+
+		<!-- local-navi -->
+		
+		<!-- //local-navi -->
+	</div>
+</div>
+<!-- //local-head -->
+<script>
+	var gnbNavigations = new Swiper('.gnb-wrapper .swiper-container', {
+		slidesPerView: "auto",
+		freeMode: true,
+		grabCursor: true,
+		simulateTouch: true,
+		preventClicks: true,
+		paginationClickable: true,
+		autoHeight: true,
+		noSwiping: true,
+		noSwipingClass : 'gnb-menu',
+		breakpoints: {
+			910: {
+				noSwiping: false,
+			},
+		}
+	});
+</script>
+<script type="text/javascript">
+
+	// const localSideDiv = document.querySelector('.local-side');
+	//
+	// if (window.matchMedia("(min-width: 992px)").matches) {
+	// 	//비회원일 경우 account-area
+	// 	if (!serviceType){
+	// 		localSideDiv.style.display = 'none';
+	// 	} else {
+	// 		//회원일 경우 account-area
+	// 		localSideDiv.style.display = 'block';
+	// 	}
+	// }
+
+	$(function() {
+		$('.local-search-v3 .elem').on('input propertychange', function() {
+			var $this = $(this);
+			var visible = Boolean($this.val());
+			$this.siblings('.form-control-clear').toggleClass('hidden', !visible);
+		}).trigger('propertychange');
+
+		$('.local-search-v3 .form-control-clear').click(function() {
+			$(this).siblings('.elem').val('').trigger('propertychange').focus();
+		});
+	});
+</script>
+<div class="toast-main-div">
+</div>
+
+		
+		
+
+
+<div class="toast-pop-wrap expert-scrap" id="pop_tost_a000">
+	<div class="expert-scrap-toast">
+		<span class="print-txt">전문가님이 스크랩되었습니다.</span>
+		<a class="close icon-fail" href="javascript:void(0);" alt="닫기"></a>
+	</div>
+</div>
+
+<div class="toast-pop-wrap expert-scrap" id="pop_tost_a001">
+	<div class="expert-scrap-toast">
+		<span class="print-txt">전문가님이 스크랩되었습니다.</span>
+		
+		<a class="close icon-fail" href="javascript:void(0);" alt="닫기"></a>
+	</div>
+</div>
+
+<div class="toast-pop-wrap expert-unlock" id="pop_tost_a002">
+	<div class="expert-scrap-toast">
+		<span class="print-txt">스크랩이 해제되었습니다.</span>
+		<a class="close icon-fail" href="javascript:void(0);" alt="닫기"></a>
+	</div>
+</div>
+
+<div class="toast-pop-wrap search-del" id="pop_tost_a003">
+	<div class="expert-scrap-toast">
+		<span class="print-txt">검색 조건이 삭제되었습니다.</span>
+		<a class="close icon-fail" href="javascript:void(0);" alt="닫기"></a>
+	</div>
+</div>
+
+<div class="toast-pop-wrap new-expert-mail" id="pop_tost_a004">
+	<div class="expert-scrap-toast">
+		<span class="print-txt">새로운 전문가님을 찾게 되면 이메일로 안내 드릴게요!</span>
+		<a class="close icon-fail" href="javascript:void(0);" alt="닫기"></a>
+	</div>
+</div>
+
+<div class="toast-pop-wrap fix-list" id="pop_tost_a005">
+	<div class="expert-scrap-toast">
+		<span class="print-txt">선택하신 항목이 List 상단에 고정되었습니다.</span>
+		<a class="close icon-fail" href="javascript:void(0);" alt="닫기"></a>
+	</div>
+</div>
+
+<div class="toast-pop-wrap fix-expert" id="pop_tost_a006">
+	<div class="expert-scrap-toast">
+		<span class="print-txt">선택하신 전문가님이 상단에 고정되었습니다.</span>
+		<a class="close icon-fail" href="javascript:void(0);" alt="닫기"></a>
+	</div>
+</div>
+
+<div class="toast-pop-wrap fix-unlock" id="pop_tost_a007">
+	<div class="expert-scrap-toast">
+		<span class="print-txt">상단고정이 해제되었습니다.</span>
+		<a class="close icon-fail" href="javascript:void(0);" alt="닫기"></a>
+	</div>
+</div>
+
+
+<script type="text/javascript">
+/**
+ * 토스트팝업 띄우기
+ * @param toastNum : 팝업 타입 (1~7)
+ * @param bodyMsg : 내용
+ * @param btnTxt : 버튼 텍스트
+ * @param fadeOutTime : 팝업 노출 시간(단위 : ms)
+ */
+function gf_openToastFinal(toastNum, bodyMsg, btnTxt, btnLink, fadeOutTime) {
+	// console.log("toast final");
+	// console.log(" - toastNum : " + toastNum);
+	// console.log(" - bodyMsg : " + bodyMsg);
+
+	// toast팝업 테스트
+	// $('#pop_tost_a007').show();
+	// $('#pop_tost_a007').delay(2000).fadeOut();
+
+	if (toastNum == '1') {
+		$('#pop_tost_a00' + toastNum + " .scrap-view").html(btnTxt);
+		//$('#pop_tost_a00' + toastNum + " .scrap-view").attr("href", btnLink);
+	}
+	$('#pop_tost_a00' + toastNum + " .print-txt").html(bodyMsg);
+	$('#pop_tost_a00' + toastNum).show();
+	$('#pop_tost_a00' + toastNum).delay(fadeOutTime).fadeOut();
+}
+
+// 팝업창 띄우기
+function gf_openToastBtntxt(toastNum, bodyMsg, btnTxt, fadeOutTime) {
+	// console.log(4);
+	var btnLink = "#none";
+	gf_openToastFinal(toastNum, bodyMsg, btnTxt, btnLink, fadeOutTime)
+}
+
+//팝업창 띄우기
+function gf_openToastFadeout(toastNum, bodyMsg, fadeOutTime) {
+	// console.log(3);
+	var btnTxt = "스크랩 전문가 보기"; // 기본 버튼명
+	gf_openToastBtntxt(toastNum, bodyMsg, btnTxt, fadeOutTime)
+}
+
+// 팝업창 띄우기
+function gf_openToast(toastNum, bodyMsg) {
+	// console.log(2);
+	gf_openToastFadeout(toastNum, bodyMsg, 2500);
+}
+
+// 기본 토스트 팝업 띄우기
+function gf_openToastDefault(bodyMsg) {
+	// console.log("1 ---> " + bodyMsg);
+	gf_openToast('7', bodyMsg);
+}
+
+// 토스트 팝업 닫기
+$('.expert-scrap-toast .close').on('click', function(){
+	$('.toast-pop-wrap').hide();
+});
+</script>
+
+		<!-- V5.0 Notice 알림 -->
+		
+		<!-- //V5.0 Notice 알림 -->
+
+		<!-- local-body -->
+		<div class="local-body" id="content">
+			
+			
+			<!-- content-head -->
+			
+				
+				
+				
+					<div class="content-head ">
+						<a href="javascript:gf_back();" class="history-back"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><title>뒤로</title><path d="M17.381,24l1.182-1.158L7.771,11.999L18.563,1.158L17.381,0L5.438,11.999L17.381,24z"/></svg></a>
+						<h3 class="content-name " id="contentName"></h3>
+						<div class="content-util">
+						<span class="button-area">
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						</span>
+						</div>
+					</div>
+				
+			
+			<!-- //content-head -->
+
+			<!-- content-body -->
+			
+
+
+
+
+
+
+
+<link rel="stylesheet" href="assets/mirror/38f377f80cfb08b3a507.css" />
+<link href="assets/mirror/fcac21e12a1858ea1bc6.css" rel="stylesheet">
+<!-- local-body -->
+<div class="local-body" id="content">
+	<!-- content-body -->
+	<div class="content-body pb-0">
+		<div class="project-expert-wrap">
+			<div class="guide-visual-top">
+				<h4 class="section-title">탤런트뱅크 전문가 프로젝트</h4>
+				<p class="section-subtitle">원하는 기간, 방식, 비용에 맞춰 <span class="block">검증된 전문가를 투입할 수 있습니다.</span></p>
+			</div>
+			<div class="service-section01">
+				<h5 class="section-title" data-aos="fade-up" data-aos-duration="400" data-aos-delay="300">탤런트뱅크의 전문가</h5>
+				<div class="stats-container">
+					<div class="stat-item">
+						<div class="circular-chart chart-blue" data-aos="zoom-out" data-aos-duration="500" data-aos-delay="300">
+							<div class="circle-content">
+								<div class="stat-number">19,000<span>+</span></div>
+							</div>
+						</div>
+						<div class="stat-info">
+							<h3 class="stat-title text-client">탤런트뱅크 전문가 회원</h3>
+							<p class="stat-description">탤런트뱅크에는 전문지식과 노하우를 가진<br>19,000명 이상의 전문가 회원이 있습니다</p>
+						</div>
+					</div>
+					<div class="stat-item">
+						<div class="circular-chart chart-skyblue" data-aos="zoom-out" data-aos-duration="500" data-aos-delay="300">
+							<div class="circle-content">
+								<div class="stat-number">48%<span>↑</span></div>
+							</div>
+						</div>
+						<div class="stat-info">
+							<h3 class="stat-title text-expert">10대 기업 출신</h3>
+							<p class="stat-description">탤런트뱅크에서 활동하는 전문가의<br>48%는 10대 기업 출신입니다</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="service-section02">
+				<h5 class="section-title" data-aos="fade-up" data-aos-duration="400" data-aos-delay="300">기업 프로젝트와 전문가 매칭</h5>
+				<ul class="data-list" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
+					<li class="data-item">
+						<div class="head">
+							<div class="head-flex">
+								<span class="badge-client02 text-client">프로젝트</span>
+								<p>자동차 부품 생산 기업의</p>
+							</div>
+							<div class="title">해외 판로 개척 프로젝트</div>
+							<ul>
+								<li>- 제품 생산 기술은 보유하고 있으나 해외 거래선 발굴에 어려움</li>
+								<li>- 해외 거래선 발굴 및 수출 업무 역량이 있는 전문가 필요</li>
+							</ul>
+						</div>
+						<div class="body">
+							<div class="box">
+								<div class="txt-head">
+									<strong>현대차 그룹 30년, 미국 주재 10년 경력</strong>
+									<span class="badge badge-client">전문가 매칭</span>
+								</div>
+								<ul>
+									<li>- 현대트랜시스, 현대위아 중역 역임</li>
+									<li>- 기아 미주본사 500개 딜러 관리 및 판매 프로그램 기획 전문가</li>
+								</ul>
+								<div class="text">
+											<span class="icon">
+												<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_148_3416)"><path d="M20.0005 40.001C31.0465 40.001 40.001 31.0465 40.001 20.0005C40.001 8.95453 31.0465 0 20.0005 0C8.95453 0 0 8.95453 0 20.0005C0 31.0465 8.95453 40.001 20.0005 40.001Z" fill="#1DAA81"/><mask id="mask0_148_3416" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="41" height="41"><path d="M20.0005 40.001C31.0465 40.001 40.001 31.0465 40.001 20.0005C40.001 8.95453 31.0465 0 20.0005 0C8.95453 0 0 8.95453 0 20.0005C0 31.0465 8.95453 40.001 20.0005 40.001Z" fill="white"/></mask><g mask="url(#mask0_148_3416)"><path d="M36.1033 33.6196C34.3766 30.7833 28.6438 30.7019 26.1734 30.719C24.5844 30.719 24.0075 29.1511 24.0407 27.5742C22.8457 28.4496 21.4678 28.9501 20.0004 28.9501C18.533 28.9501 17.1551 28.4496 15.9591 27.5742C15.9933 29.1532 15.4184 30.718 13.8264 30.72C11.356 30.7029 5.62315 30.7844 3.89647 33.6206C2.16979 36.4569 1.24414 40.0017 1.24414 40.0017H38.7546C38.7546 40.0017 37.83 36.4569 36.1023 33.6206L36.1033 33.6196Z" fill="#FDBC91"/><path d="M19.7682 33.2106L18.8737 31.3623L18.4194 32.9724C18.4194 32.9724 19.0798 33.2578 19.7682 33.2106Z" fill="#C7C7C7"/><path d="M19.9985 33.2516L20.9202 31.4033L21.3554 32.9441C21.3554 32.9441 20.6538 33.2395 19.9995 33.2506L19.9985 33.2516Z" fill="#C7C7C7"/><path d="M24.2156 26.3252C25.5191 25.1453 26.496 23.4418 27.1252 21.5291C27.5071 22.0538 28.086 21.5251 28.1564 21.0357C28.1503 20.2849 29.5433 16.8848 27.9694 17.0165C27.9694 17.0165 27.9614 17.0315 27.9493 17.0587C29.0187 2.59098 10.97 2.61008 12.0494 17.0647C12.0354 17.0346 12.0263 17.0165 12.0263 17.0165C10.4514 16.8898 11.8454 20.2799 11.8394 21.0357C11.9097 21.5261 12.4906 22.0548 12.8726 21.5261C13.5027 23.4397 14.4796 25.1443 15.7842 26.3252C17.0184 27.2821 18.4596 27.8318 19.9994 27.8318C21.5391 27.8318 22.9804 27.2821 24.2156 26.3252Z" fill="#FDBC91"/><path d="M24.0406 27.5745C24.0497 27.1584 24.0999 26.7423 24.1864 26.3533C24.1964 26.3443 24.2065 26.3342 24.2165 26.3252C22.9813 27.282 21.5401 27.8318 20.0003 27.8318C18.4606 27.8318 17.0194 27.282 15.7852 26.3252C15.7952 26.3342 15.8043 26.3443 15.8143 26.3523C15.8997 26.7413 15.951 27.1584 15.959 27.5735C17.154 28.4489 18.532 28.9494 20.0003 28.9494C21.4687 28.9494 22.8456 28.4489 24.0406 27.5735V27.5745Z" fill="#F2AD80"/><path d="M27.2938 19.354C27.2938 19.354 30.2989 11.6432 26.938 9.4683C26.938 9.4683 27.6134 4.38375 19.2534 4.65713C17.6433 4.70939 16.0594 5.13151 14.6654 5.93957C12.7477 7.05216 10.7175 9.11452 11.2422 12.7689C12.1909 19.3711 12.7025 19.354 12.7025 19.354C12.7025 19.354 13.6593 16.0785 13.8653 14.388C14.0814 12.6161 16.0001 8.90246 24.1701 12C24.1701 12 25.7913 12.1568 25.8305 13.976C25.8697 15.7951 27.2938 19.354 27.2938 19.354Z" fill="#571F00"/><path d="M36.1043 33.3478C34.642 30.8422 28.1132 30.4271 25.3211 30.3608C19.3351 34.5538 20.0084 33.9026 14.6746 30.3115C11.8796 30.3859 5.35782 30.8723 3.91255 33.3478C2.18688 36.3046 1.26123 40.0002 1.26123 40.0002H38.7546C38.7546 40.0002 37.83 36.3046 36.1033 33.3478H36.1043Z" fill="#303030"/><path d="M15.7792 29.084L18.8738 31.3624L17.9491 34.6399L14.4727 30.3182L15.7792 29.084Z" fill="#F5F5F5"/><path d="M24.2517 29.043L20.9199 31.4048L21.8446 34.6813L25.32 30.3606L24.2517 29.043Z" fill="#F5F5F5"/></g></g><defs><clipPath id="clip0_148_3416"><rect width="40" height="40" fill="white"/></clipPath></defs></svg>											</span>
+									<p>자동차 부품 해외 영업 전문가</p>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="data-item">
+						<div class="head">
+							<div class="head-flex">
+								<span class="badge-client02 text-client">프로젝트</span>
+								<p>영업기획팀 구축 및</p>
+							</div>
+							<div class="title">온라인 로열티(DB) 마케팅 전략 수립</div>
+							<ul>
+								<li>- 신설되는 영업기획팀의 업무 프로세스 정립이 시급</li>
+								<li>- 휴면 고객 및 충성도 낮은 고객 대상 재활성화 전략 필요</li>
+							</ul>
+						</div>
+						<div class="body">
+							<div class="box">
+								<div class="txt-head">
+									<strong>한국IBM, 현대카드 출신 20년 경력</strong>
+									<span class="badge badge-client">전문가 매칭</span>
+								</div>
+								<ul>
+									<li>- IBM, SK, 현대카드 등 20년 이상의 DB마케팅 분야에서 활동</li>
+									<li>- 로열티 마케팅을 통한 성공적인 사업 활성화 및 신규사업 추진</li>
+								</ul>
+								<div class="text">
+											<span class="icon">
+												<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_148_3446)"><path d="M20.0005 40.001C31.0465 40.001 40.001 31.0465 40.001 20.0005C40.001 8.95453 31.0465 0 20.0005 0C8.95453 0 0 8.95453 0 20.0005C0 31.0465 8.95453 40.001 20.0005 40.001Z" fill="#33B8ED"/><mask id="mask0_148_3446" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="41" height="41"><path d="M20.0005 40.001C31.0465 40.001 40.001 31.0465 40.001 20.0005C40.001 8.95453 31.0465 0 20.0005 0C8.95453 0 0 8.95453 0 20.0005C0 31.0465 8.95453 40.001 20.0005 40.001Z" fill="white"/></mask><g mask="url(#mask0_148_3446)"><path d="M36.1043 33.6196C34.3776 30.7833 28.6448 30.7019 26.1744 30.719C24.5854 30.719 24.0085 29.1511 24.0417 27.5742C22.8467 28.4496 21.4687 28.9501 20.0014 28.9501C18.534 28.9501 17.1561 28.4496 15.9601 27.5742C15.9942 29.1532 15.4193 30.718 13.8273 30.72C11.3569 30.7029 5.62412 30.7844 3.89745 33.6206C2.17077 36.4569 1.24512 40.0017 1.24512 40.0017H38.7556C38.7556 40.0017 37.831 36.4569 36.1033 33.6206L36.1043 33.6196Z" fill="#FDBC91"/><path d="M25.265 30.5055C24.9484 30.3376 24.7011 30.0793 24.5132 29.7607C20.1 32.0693 16.4547 30.3346 15.4788 29.7758C15.2949 30.0834 15.0526 30.3336 14.7461 30.4985C17.8075 33.8995 22.2006 33.9026 25.2639 30.5045L25.265 30.5055Z" fill="white"/><path d="M24.2175 26.3252C25.5211 25.1453 26.498 23.4418 27.1271 21.5291C27.5091 22.0538 28.088 21.5251 28.1583 21.0357C28.1523 20.2849 29.5453 16.8848 27.9714 17.0165C27.9714 17.0165 27.9633 17.0315 27.9513 17.0587C29.0207 2.59098 10.972 2.61008 12.0514 17.0647C12.0373 17.0346 12.0283 17.0165 12.0283 17.0165C10.4534 16.8898 11.8474 20.2799 11.8413 21.0357C11.9117 21.5261 12.4926 22.0548 12.8745 21.5261C13.5047 23.4397 14.4816 25.1443 15.7862 26.3252C17.0204 27.2821 18.4616 27.8318 20.0013 27.8318C21.5411 27.8318 22.9823 27.2821 24.2175 26.3252Z" fill="#FDBC91"/><path d="M24.0416 27.5745C24.0507 27.1584 24.1009 26.7423 24.1873 26.3533C24.1974 26.3443 24.2074 26.3342 24.2175 26.3252C22.9823 27.282 21.541 27.8318 20.0013 27.8318C18.4616 27.8318 17.0203 27.282 15.7861 26.3252C15.7962 26.3342 15.8052 26.3443 15.8153 26.3523C15.9007 26.7413 15.952 27.1584 15.96 27.5735C17.155 28.4489 18.5329 28.9494 20.0013 28.9494C21.4697 28.9494 22.8466 28.4489 24.0416 27.5735V27.5745Z" fill="#F2AD80"/><path d="M36.1043 33.6187C34.3777 30.7824 28.6439 30.701 26.1734 30.7181C25.8217 30.7181 25.5212 30.6407 25.2639 30.5051C22.2005 33.9031 17.8074 33.9001 14.746 30.499C14.4867 30.6387 14.1822 30.7181 13.8264 30.7191C11.356 30.702 5.62317 30.7835 3.89549 33.6197C2.16882 36.456 1.24316 40.0008 1.24316 40.0008H38.7557C38.7557 40.0008 37.83 36.456 36.1033 33.6197L36.1043 33.6187Z" fill="#005E5B"/><path d="M15.8909 28.5791L20.0006 30.9098L18.0136 33.7863L14.6567 30.4937L15.8909 28.5791Z" fill="#E6E6E6"/><path d="M24.1082 28.5791L19.9985 30.9098L21.8358 33.7863L25.3424 30.4937L24.1082 28.5791Z" fill="#E6E6E6"/><path d="M22.2046 23.7041C22.2046 23.7041 21.2176 24.1182 19.9995 24.1182C18.7814 24.1182 17.7944 23.7041 17.7944 23.7041C17.7944 23.7041 18.7814 23.29 19.9995 23.29C21.2176 23.29 22.2046 23.7041 22.2046 23.7041Z" fill="#FDBC91"/><path d="M29.1222 11.8224C28.5835 7.4575 24.7844 5.06347 19.3431 4.8494C13.9028 4.63632 13.7731 7.45348 13.7731 7.45348C8.15989 8.60627 10.578 13.8144 10.578 13.8144L12.5208 19.1513C13.557 18.8528 13.2545 15.0959 14.4636 11.8084C15.2194 9.75404 17.5943 10.34 19.2687 11.0686C20.3341 11.532 21.4708 11.7983 22.6256 11.933C25.5161 12.2687 25.9764 15.2768 26.2528 17.2728C26.3794 18.1864 26.9855 19.1513 26.9855 19.1513L27.7222 17.5372C28.276 16.3241 28.6981 15.0537 28.9544 13.7461C29.0941 13.0355 29.1825 12.3219 29.1212 11.8234L29.1222 11.8224Z" fill="black"/></g></g><defs><clipPath id="clip0_148_3446"><rect width="40" height="40" fill="white"/></clipPath></defs></svg>
+											</span>
+									<p>DB 마케팅 전문가</p>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="data-item">
+						<div class="head">
+							<div class="head-flex">
+								<span class="badge-client02 text-client">프로젝트</span>
+								<p>신규 패션 브랜드</p>
+							</div>
+							<div class="title">이커머스 진출 전략</div>
+							<ul>
+								<li>- 신규 상품 개발하여 온라인몰 및 패션 플랫폼 등을 통한 판매 계획</li>
+								<li>- B2C 경험 및 이커머스 경험인 전무하여 관련한 도움 필요</li>
+							</ul>
+						</div>
+						<div class="body">
+							<div class="box">
+								<div class="txt-head">
+									<strong>다음 커뮤니케이션 출신 20년 경력</strong>
+									<span class="badge badge-client">전문가 매칭</span>
+								</div>
+								<ul>
+									<li>- 다음 오픈 마켓 외 다수의 오픈 마켓 구축 및 론칭</li>
+									<li>- 패션 브랜드의 모든 분야를 고려한 마케팅 설계</li>
+								</ul>
+								<div class="text">
+											<span class="icon">
+												<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_148_3476)"><path d="M20.0005 40.001C31.0465 40.001 40.001 31.0465 40.001 20.0005C40.001 8.95453 31.0465 0 20.0005 0C8.95453 0 0 8.95453 0 20.0005C0 31.0465 8.95453 40.001 20.0005 40.001Z" fill="#FF7411"/><mask id="mask0_148_3476" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="41" height="41"><path d="M20.0005 40.001C31.0465 40.001 40.001 31.0465 40.001 20.0005C40.001 8.95453 31.0465 0 20.0005 0C8.95453 0 0 8.95453 0 20.0005C0 31.0465 8.95453 40.001 20.0005 40.001Z" fill="white"/></mask><g mask="url(#mask0_148_3476)"><path d="M24.2908 26.3252C25.5943 25.1453 26.5712 23.4418 27.2004 21.5291C27.5823 22.0538 28.1612 21.5251 28.2316 21.0357C28.2255 20.2849 29.6185 16.8848 28.0446 17.0165C28.0446 17.0165 28.0366 17.0315 28.0245 17.0587C29.0939 2.59098 11.0452 2.61008 12.1246 17.0647C12.1106 17.0346 12.1015 17.0165 12.1015 17.0165C10.5266 16.8898 11.9206 20.2799 11.9146 21.0357C11.9849 21.5261 12.5658 22.0548 12.9478 21.5261C13.5779 23.4397 14.5548 25.1443 15.8594 26.3252C17.0936 27.2821 18.5348 27.8318 20.0746 27.8318C21.6143 27.8318 23.0556 27.2821 24.2908 26.3252Z" fill="#FDBC91"/><path d="M24.1158 27.5745C24.1249 27.1584 24.1751 26.7423 24.2616 26.3533C24.2716 26.3443 24.2817 26.3342 24.2917 26.3252C23.0565 27.282 21.6153 27.8318 20.0755 27.8318C18.5358 27.8318 17.0946 27.282 15.8604 26.3252C15.8704 26.3342 15.8794 26.3443 15.8895 26.3523C15.9749 26.7413 16.0262 27.1584 16.0342 27.5735C17.2292 28.4489 18.6072 28.9494 20.0755 28.9494C21.5439 28.9494 22.9208 28.4489 24.1158 27.5735V27.5745Z" fill="#F2AD80"/><path d="M36.1785 33.6196C34.4518 30.7833 28.719 30.7019 26.2486 30.719C24.6596 30.719 24.0827 29.1511 24.1159 27.5742C22.9209 28.4496 21.543 28.9501 20.0756 28.9501C18.6082 28.9501 17.2303 28.4496 16.0343 27.5742C16.0684 29.1532 15.4936 30.718 13.9016 30.72C11.4311 30.7029 5.69834 30.7844 3.97166 33.6206C2.24499 36.4569 1.31934 40.0017 1.31934 40.0017H38.8298C38.8298 40.0017 37.9052 36.4569 36.1775 33.6206L36.1785 33.6196Z" fill="#FDBC91"/><path d="M27.3562 18.8941C27.3562 18.8941 26.6798 12.6889 25.4798 11.912C24.9039 11.5391 23.9501 11.5964 23.0124 11.8336C21.3088 12.2658 19.5208 12.2939 17.8223 11.8427C16.8343 11.5803 15.8112 11.4969 15.2081 11.9824C13.7609 13.1472 12.5608 19.2891 12.5608 19.2891C12.5608 19.2891 10.1608 11.8065 12.5608 8.38227C12.5608 8.38227 14.4312 6.08774 14.4312 5.41737V6.08774C14.4312 6.08774 15.5609 4.35805 14.9961 3.26355C14.9961 3.26355 16.0554 3.58114 16.373 4.14598C16.373 4.14598 17.0434 2.73389 16.6202 1.99316C16.6202 1.99316 18.562 2.80524 19.0906 3.6525C19.6203 4.49976 19.7962 2.91078 19.4434 2.52283C19.4434 2.52283 21.9138 2.62836 22.9028 3.51079C23.8908 4.39322 23.3621 3.06555 23.3621 3.06555C23.3621 3.06555 26.1863 3.61632 26.6094 6.79328L27.4215 6.40835C27.4215 6.40835 30.2407 11.8939 27.3562 18.8931V18.8941Z" fill="#592800"/><path d="M36.1796 33.6191C34.4529 30.7829 28.7191 30.7015 26.2487 30.7186C25.4647 30.7186 24.927 30.3366 24.5873 29.7607C20.1741 32.0693 16.5288 30.3346 15.5529 29.7758C15.2132 30.3427 14.6785 30.7176 13.9006 30.7186C11.4302 30.7015 5.69739 30.7829 3.96971 33.6191C2.24303 36.4554 1.31738 40.0002 1.31738 40.0002H38.8299C38.8299 40.0002 37.9042 36.4554 36.1776 33.6191H36.1796Z" fill="#E3E3E3"/><path d="M20.081 30.9053L18.8257 32.7244L20.076 33.6993L21.2428 32.7244L20.081 30.9053Z" fill="#F20000"/><path d="M18.0889 39.9998L19.4799 31.7725H20.6347L21.9111 39.9998H18.0889Z" fill="#F20000"/><path d="M15.9661 28.5801L20.0758 30.9108L18.0888 33.7872L14.7319 30.4947L15.9661 28.5801Z" fill="#F2F2F2"/><path d="M24.1834 28.5801L20.0737 30.9108L21.911 33.7872L25.4176 30.4947L24.1834 28.5801Z" fill="#F2F2F2"/></g></g><defs><clipPath id="clip0_148_3476"><rect width="40" height="40" fill="white"/></clipPath></defs></svg>
+											</span>
+									<p>이커머스, 온라인 마케팅 전문가</p>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="data-item">
+						<div class="head">
+							<div class="head-flex">
+								<span class="badge-client02 text-client">프로젝트</span>
+								<p>업무 효율 개선 프로젝트</p>
+							</div>
+							<div class="title">콜센터 운영 체계화</div>
+							<ul>
+								<li>- 내/외부 전화 응대 과다로 업무 비효율 및 정확한 데이터 집계가 안되고 있는 상황으로 콜센터 운영에 대한 체계 및 기준 정립 필요</li>
+							</ul>
+						</div>
+						<div class="body">
+							<div class="box">
+								<div class="txt-head">
+									<strong>에스원 콜 시스템 개발 및 관리 20년 경력</strong>
+									<span class="badge badge-client">전문가 매칭</span>
+								</div>
+								<ul>
+									<li>- 에스원 IT 총괄 경험 및 인입콜 감소를 위한 다양한 분석, 시스템 개발 경험 및 실적 </li>
+								</ul>
+								<div class="text">
+											<span class="icon">
+												<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_148_3506)"><path d="M20.0005 40.001C31.0465 40.001 40.001 31.0465 40.001 20.0005C40.001 8.95453 31.0465 0 20.0005 0C8.95453 0 0 8.95453 0 20.0005C0 31.0465 8.95453 40.001 20.0005 40.001Z" fill="#FFC002"/><mask id="mask0_148_3506" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="41" height="41"><path d="M20.0005 40.001C31.0465 40.001 40.001 31.0465 40.001 20.0005C40.001 8.95453 31.0465 0 20.0005 0C8.95453 0 0 8.95453 0 20.0005C0 31.0465 8.95453 40.001 20.0005 40.001Z" fill="white"/></mask><g mask="url(#mask0_148_3506)"><path d="M12.7856 24.4632L14.9375 32.9489L17.5074 27.4513C17.5074 27.4513 16.0129 22.7305 12.7866 24.4632H12.7856Z" fill="#241000"/><path d="M27.3101 24.8236L25.1583 33.3092L22.5884 27.8116C22.5884 27.8116 24.0829 23.0909 27.3091 24.8236H27.3101Z" fill="#241000"/><path d="M35.1784 33.9856C33.7763 31.683 29.5732 31.3071 26.947 31.2579L20.2735 36.6641L13.2502 31.2549C10.6421 31.2901 6.26005 31.6247 4.82183 33.9866C3.19364 36.66 2.32227 40.0008 2.32227 40.0008H37.6789C37.6789 40.0008 36.8065 36.66 35.1794 33.9866L35.1784 33.9856Z" fill="#AE91FE"/><path d="M26.9468 31.258C26.5247 31.25 26.1408 31.25 25.8182 31.252C24.3206 31.252 23.7769 29.7746 23.8081 28.2871C22.6814 29.1123 21.3829 29.5846 19.9999 29.5846C18.617 29.5846 17.3174 29.1123 16.1908 28.2871C16.2229 29.7756 15.6812 31.25 14.1807 31.252C13.9093 31.25 13.5937 31.25 13.25 31.254L20.2733 36.6632L26.9468 31.257V31.258Z" fill="#FDBC91"/><path d="M23.9742 27.1104C25.2034 25.9988 26.123 24.3918 26.717 22.5897C27.0768 23.0842 27.6225 22.5857 27.6889 22.1244C27.6828 21.4168 28.9964 18.2117 27.513 18.3353C27.513 18.3353 27.506 18.3494 27.4939 18.3745C28.502 4.73801 11.4895 4.75509 12.5076 18.3806C12.4935 18.3524 12.4855 18.3353 12.4855 18.3353C11.001 18.2167 12.3156 21.4108 12.3096 22.1244C12.3759 22.5867 12.9237 23.0852 13.2835 22.5867C13.8775 24.3908 14.7981 25.9978 16.0273 27.1104C17.1911 28.012 18.5489 28.5306 20.0002 28.5306C21.4515 28.5306 22.8104 28.012 23.9742 27.1104Z" fill="#FDBC91"/><path d="M23.8084 28.2882C23.8165 27.8963 23.8647 27.5033 23.9461 27.1375C23.9552 27.1294 23.9652 27.1194 23.9743 27.1113C22.8104 28.0129 21.4516 28.5315 20.0003 28.5315C18.549 28.5315 17.1902 28.0129 16.0273 27.1113C16.0364 27.1194 16.0454 27.1284 16.0555 27.1375C16.1359 27.5043 16.1841 27.8973 16.1922 28.2882C17.3188 29.1134 18.6174 29.5858 20.0013 29.5858C21.3853 29.5858 22.6838 29.1144 23.8094 28.2882H23.8084Z" fill="#F2AD80"/><path d="M22.4534 11.9136C22.4534 11.9136 22.9912 13.6463 25.143 15.6785C27.2948 17.7107 22.4534 37.6107 22.4534 37.6107C22.4534 37.6107 29.2205 34.9815 29.8185 30.3794C30.4165 25.7783 30.5813 6.83307 20.7207 7.37178C20.7207 7.37178 13.2653 6.41598 10.6954 14.2443C8.20384 21.8334 6.79678 34.8026 16.5377 37.6107C16.5377 37.6107 12.7728 23.6868 14.3266 17.5308C14.3266 17.5308 18.4503 11.9729 22.4545 11.9136H22.4534Z" fill="#3B1A00"/></g></g><defs><clipPath id="clip0_148_3506"><rect width="40" height="40" fill="white"/></clipPath></defs></svg>
+											</span>
+									<p>콜시스템 전문가</p>
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="service-section03">
+				<h5 class="section-title" data-aos="fade-up" data-aos-duration="400" data-aos-delay="300">전문가 프로젝트 Process</h5>
+				<ul class="process-list">
+					<li data-aos="fade-up" data-aos-duration="400" data-aos-delay="300">
+								<span class="icon">
+									<svg width="41" height="40" viewBox="0 0 41 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.66699 30V36.2767L11.192 34.7617L19.1287 30H27.0003C28.8387 30 30.3337 28.505 30.3337 26.6667V13.3333C30.3337 11.495 28.8387 10 27.0003 10H7.00033C5.16199 10 3.66699 11.495 3.66699 13.3333V26.6667C3.66699 28.505 5.16199 30 7.00033 30H8.66699ZM7.00033 13.3333H27.0003V26.6667H18.2053L12.0003 30.39V26.6667H7.00033V13.3333Z" fill="#4E7BD9"/><path d="M33.6668 3.33301H13.6668C11.8285 3.33301 10.3335 4.82801 10.3335 6.66634H30.3335C32.1718 6.66634 33.6668 8.16134 33.6668 9.99967V23.333C35.5052 23.333 37.0002 21.838 37.0002 19.9997V6.66634C37.0002 4.82801 35.5052 3.33301 33.6668 3.33301Z" fill="#4E7BD9"/></svg>
+								</span>
+						<div class="text">
+							<strong>프로젝트 의뢰</strong>
+							<p>전문가 프로젝트<br>문의 및 의뢰</p>
+						</div>
+					</li>
+					<li data-aos="fade-up" data-aos-duration="450" data-aos-delay="300">
+								<span class="icon">
+									<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22.8448 3.82134C22.5323 3.50876 22.1085 3.3331 21.6665 3.33301H9.99984C8.1615 3.33301 6.6665 4.82801 6.6665 6.66634V33.333C6.6665 35.1713 8.1615 36.6663 9.99984 36.6663H29.9998C31.8382 36.6663 33.3332 35.1713 33.3332 33.333V14.9997C33.3331 14.5577 33.1574 14.1338 32.8448 13.8213L22.8448 3.82134ZM9.99984 6.66634H20.9765L29.9998 15.6897L30.0032 30.9797L25.7232 26.6997C26.3065 25.708 26.6665 24.5647 26.6665 23.333C26.6665 19.6563 23.6765 16.6663 19.9998 16.6663C16.3232 16.6663 13.3332 19.6563 13.3332 23.333C13.3332 27.0097 16.3232 29.9997 19.9998 29.9997C21.2315 29.9997 22.3748 29.6397 23.3665 29.0563L27.6432 33.333H9.99984V6.66634ZM19.9998 26.6663C18.1615 26.6663 16.6665 25.1713 16.6665 23.333C16.6665 21.4947 18.1615 19.9997 19.9998 19.9997C21.8382 19.9997 23.3332 21.4947 23.3332 23.333C23.3332 25.1713 21.8382 26.6663 19.9998 26.6663Z" fill="#4E7BD9"/></svg>
+								</span>
+						<div class="text">
+							<strong>전문가 모집</strong>
+							<p>BD(Business Director)<br>사전 미팅 및 전문가 모집</p>
+						</div>
+					</li>
+					<li data-aos="fade-up" data-aos-duration="500" data-aos-delay="300">
+								<span class="icon">
+									<svg width="41" height="40" viewBox="0 0 41 40" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_148_3541)"><path d="M28.5323 32.92L27.4656 24.38C27.3145 23.1704 26.7266 22.0576 25.8126 21.251C24.8985 20.4444 23.7213 19.9995 22.5023 20H18.829C17.6105 20.0003 16.4341 20.4456 15.5208 21.2521C14.6074 22.0587 14.0201 23.1709 13.869 24.38L12.8006 32.92C12.742 33.3892 12.7839 33.8655 12.9234 34.3172C13.063 34.769 13.2971 35.1859 13.6101 35.5403C13.9232 35.8946 14.3081 36.1783 14.7392 36.3725C15.1703 36.5667 15.6378 36.667 16.1106 36.6667H25.224C25.6967 36.6668 26.164 36.5663 26.5949 36.372C27.0258 36.1777 27.4105 35.894 27.7233 35.5397C28.0362 35.1853 28.2701 34.7685 28.4096 34.3169C28.5491 33.8652 28.5909 33.389 28.5323 32.92Z" stroke="#4E7BD9" stroke-width="3.33333" stroke-linecap="round" stroke-linejoin="round"/><path d="M20.667 13.333C23.4284 13.333 25.667 11.0944 25.667 8.33301C25.667 5.57158 23.4284 3.33301 20.667 3.33301C17.9056 3.33301 15.667 5.57158 15.667 8.33301C15.667 11.0944 17.9056 13.333 20.667 13.333Z" stroke="#4E7BD9" stroke-width="3.33333"/><path d="M7.33382 18.3327C9.17477 18.3327 10.6672 16.8403 10.6672 14.9993C10.6672 13.1584 9.17477 11.666 7.33382 11.666C5.49287 11.666 4.00049 13.1584 4.00049 14.9993C4.00049 16.8403 5.49287 18.3327 7.33382 18.3327Z" stroke="#4E7BD9" stroke-width="3.33333"/><path d="M34.0003 18.3327C35.8413 18.3327 37.3337 16.8403 37.3337 14.9993C37.3337 13.1584 35.8413 11.666 34.0003 11.666C32.1594 11.666 30.667 13.1584 30.667 14.9993C30.667 16.8403 32.1594 18.3327 34.0003 18.3327Z" stroke="#4E7BD9" stroke-width="3.33333"/><path d="M7.3338 23.333H6.8238C6.03474 23.3329 5.27122 23.6127 4.6691 24.1227C4.06697 24.6327 3.66527 25.3397 3.53547 26.118L2.98047 29.4513C2.90082 29.9289 2.92617 30.4181 3.05475 30.8849C3.18333 31.3517 3.41205 31.7849 3.72501 32.1543C4.03797 32.5237 4.42766 32.8205 4.86696 33.0241C5.30626 33.2277 5.78463 33.3331 6.2688 33.333H12.3338M34.0005 23.333H34.5105C35.2995 23.3329 36.063 23.6127 36.6652 24.1227C37.2673 24.6327 37.669 25.3397 37.7988 26.118L38.3538 29.4513C38.4334 29.9289 38.4081 30.4181 38.2795 30.8849C38.1509 31.3517 37.9222 31.7849 37.6093 32.1543C37.2963 32.5237 36.9066 32.8205 36.4673 33.0241C36.028 33.2277 35.5496 33.3331 35.0655 33.333H29.0005" stroke="#4E7BD9" stroke-width="3.33333" stroke-linecap="round" stroke-linejoin="round"/></g><defs><clipPath id="clip0_148_3541"><rect width="40" height="40" fill="white" transform="translate(0.666992)"/></clipPath></defs></svg>
+								</span>
+						<div class="text">
+							<strong>3자 미팅</strong>
+							<p>기업고객, 탤런트뱅크,<br>전문가 3자 미팅 진행</p>
+						</div>
+					</li>
+					<li data-aos="fade-up" data-aos-duration="550" data-aos-delay="300">
+								<span class="icon">
+									<svg width="41" height="40" viewBox="0 0 41 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13.6668 35H10.3335C9.00741 35 7.73564 34.4732 6.79796 33.5355C5.86028 32.5979 5.3335 31.3261 5.3335 30V28.3333H14.5002M28.6668 14.1667V8.33333C28.6668 7.67406 28.8623 7.0296 29.2286 6.48143C29.5949 5.93327 30.1155 5.50603 30.7246 5.25374C31.3336 5.00144 32.0039 4.93543 32.6505 5.06405C33.2971 5.19267 33.891 5.51014 34.3572 5.97631C34.8234 6.44249 35.1408 7.03643 35.2694 7.68303C35.3981 8.32964 35.3321 8.99986 35.0798 9.60895C34.8275 10.218 34.4002 10.7386 33.8521 11.1049C33.3039 11.4712 32.6594 11.6667 32.0002 11.6667H28.6668" stroke="#4E7BD9" stroke-width="3.33333" stroke-linecap="round" stroke-linejoin="round"/><path d="M32.0003 5H13.667C12.3409 5 11.0691 5.52678 10.1315 6.46447C9.19378 7.40215 8.66699 8.67392 8.66699 10V28.3333M15.3337 11.6667H22.0003M15.3337 18.3333H22.0003M31.0337 21.0167C31.6901 20.3603 32.5804 19.9915 33.5087 19.9915C34.437 19.9915 35.3272 20.3603 35.9837 21.0167C36.6401 21.6731 37.0088 22.5634 37.0088 23.4917C37.0088 24.42 36.6401 25.3103 35.9837 25.9667L25.3337 36.6667H20.3337V31.6667L31.0337 21.0167Z" stroke="#4E7BD9" stroke-width="3.33333" stroke-linecap="round" stroke-linejoin="round"/></svg>
+								</span>
+						<div class="text">
+							<strong>온라인 계약</strong>
+							<p>온라인<br>3자 계약</p>
+						</div>
+					</li>
+					<li data-aos="fade-up" data-aos-duration="600" data-aos-delay="300">
+								<span class="icon">
+									<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_148_3562)"><path d="M16.25 20V21.25C16.25 21.7473 16.0525 22.2242 15.7008 22.5758C15.3492 22.9275 14.8723 23.125 14.375 23.125C13.8777 23.125 13.4008 22.9275 13.0492 22.5758C12.6975 22.2242 12.5 21.7473 12.5 21.25V20C12.5 19.5027 12.6975 19.0258 13.0492 18.6742C13.4008 18.3225 13.8777 18.125 14.375 18.125C14.8723 18.125 15.3492 18.3225 15.7008 18.6742C16.0525 19.0258 16.25 19.5027 16.25 20ZM20 17.5C19.5027 17.5 19.0258 17.6975 18.6742 18.0492C18.3225 18.4008 18.125 18.8777 18.125 19.375V21.25C18.125 21.7473 18.3225 22.2242 18.6742 22.5758C19.0258 22.9275 19.5027 23.125 20 23.125C20.4973 23.125 20.9742 22.9275 21.3258 22.5758C21.6775 22.2242 21.875 21.7473 21.875 21.25V19.375C21.875 18.8777 21.6775 18.4008 21.3258 18.0492C20.9742 17.6975 20.4973 17.5 20 17.5ZM25.625 16.875C25.1277 16.875 24.6508 17.0725 24.2992 17.4242C23.9475 17.7758 23.75 18.2527 23.75 18.75V21.25C23.75 21.7473 23.9475 22.2242 24.2992 22.5758C24.6508 22.9275 25.1277 23.125 25.625 23.125C26.1223 23.125 26.5992 22.9275 26.9508 22.5758C27.3025 22.2242 27.5 21.7473 27.5 21.25V18.75C27.5 18.2527 27.3025 17.7758 26.9508 17.4242C26.5992 17.0725 26.1223 16.875 25.625 16.875ZM34.375 14.3125V25.625H35C35.4973 25.625 35.9742 25.8225 36.3258 26.1742C36.6775 26.5258 36.875 27.0027 36.875 27.5C36.875 27.9973 36.6775 28.4742 36.3258 28.8258C35.9742 29.1775 35.4973 29.375 35 29.375H21.875V33.0031C22.5899 33.4159 23.1486 34.053 23.4645 34.8157C23.7805 35.5783 23.8359 36.4239 23.6222 37.2213C23.4086 38.0187 22.9378 38.7233 22.2829 39.2258C21.6279 39.7283 20.8255 40.0007 20 40.0007C19.1745 40.0007 18.3721 39.7283 17.7171 39.2258C17.0622 38.7233 16.5914 38.0187 16.3778 37.2213C16.1641 36.4239 16.2195 35.5783 16.5355 34.8157C16.8514 34.053 17.4101 33.4159 18.125 33.0031V29.375H5C4.50272 29.375 4.02581 29.1775 3.67417 28.8258C3.32254 28.4742 3.125 27.9973 3.125 27.5C3.125 27.0027 3.32254 26.5258 3.67417 26.1742C4.02581 25.8225 4.50272 25.625 5 25.625H5.625V14.3125C4.91915 14.1684 4.28475 13.7849 3.82918 13.2268C3.37361 12.6687 3.12485 11.9704 3.125 11.25V7.5C3.125 6.6712 3.45424 5.87634 4.04029 5.29029C4.62634 4.70424 5.4212 4.375 6.25 4.375H33.75C34.5788 4.375 35.3737 4.70424 35.9597 5.29029C36.5458 5.87634 36.875 6.6712 36.875 7.5V11.25C36.8751 11.9704 36.6264 12.6687 36.1708 13.2268C35.7152 13.7849 35.0809 14.1684 34.375 14.3125ZM6.875 10.625H33.125V8.125H6.875V10.625ZM30.625 25.625V14.375H9.375V25.625H30.625Z" fill="#4E7BD9"/></g><defs><clipPath id="clip0_148_3562"><rect width="40" height="40" fill="white"/></clipPath></defs></svg>
+								</span>
+						<div class="text">
+							<strong>프로젝트 시작</strong>
+							<p>대금예치 및<br>프로젝트 시작</p>
+						</div>
+					</li>
+					<li data-aos="fade-up" data-aos-duration="650" data-aos-delay="300">
+								<span class="icon">
+									<svg width="41" height="40" viewBox="0 0 41 40" fill="none" x5mlns="http://www.w3.org/2000/svg"><path d="M20.6668 3.33301L25.0443 6.52634L30.4634 6.51634L32.1276 11.673L36.5176 14.8497L34.8334 19.9997L36.5176 25.1497L32.1276 28.3263L30.4634 33.483L25.0443 33.473L20.6668 36.6663L16.2893 33.473L10.8701 33.483L9.20592 28.3263L4.81592 25.1497L6.50008 19.9997L4.81592 14.8497L9.20592 11.673L10.8701 6.51634L16.2893 6.52634L20.6668 3.33301Z" stroke="#4E7BD9" stroke-width="3.33333" stroke-linecap="round" stroke-linejoin="round"/><path d="M14.8335 19.9997L19.0002 24.1663L27.3335 15.833" stroke="#4E7BD9" stroke-width="3.33333" stroke-linecap="round" stroke-linejoin="round"/></svg>
+								</span>
+						<div class="text">
+							<strong>완료</strong>
+							<p>프로젝트 완료<br>및 평가</p>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="service-section04">
+				<h5 class="section-title" data-aos="fade-up" data-aos-duration="400" data-aos-delay="300">전문가 프로젝트 사례</h5>
+				<div class="case-section" data-aos="fade-up" data-aos-duration="400" data-aos-delay="300">
+					<div class="swiper-container">
+						<div class="swiper-wrapper case-list">
+							<div class="swiper-slide">
+								<div class="card-content">
+									<div class="project-case">
+										<span class="badge badge-lg badge-pill badge-client">프로젝트</span>
+										<h6 class="project-title">신축 사옥 건축 프로젝트</h6>
+										<p class="project-description">
+											프로젝트 기간 : 1개월
+										</p>
+										<p class="txt">
+											회사 사옥, 공장, 쇼룸, 기숙사를 <br>
+											건축하면서 복잡한 인허가 문제와 <br>
+											설계 이슈에 부딪쳤습니다. <br> 건축 <span>프로젝트 경험이 많은 전문가</span>는
+											설계사와 미팅하면서 여러 가지 합리적인 <br>
+											<span>세부 실행방안</span>을 제공했고,
+											덕분에 빠르게 의사 결정 할 수 있었습니다.
+										</p>
+										<div class="project-tags">
+											<span class="tag">설계관리</span>
+											<span class="tag">실행전략</span>
+											<span class="tag">건축인허가</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="swiper-slide">
+								<div class="card-content">
+									<div class="project-case">
+										<span class="badge badge-lg badge-pill badge-client">프로젝트</span>
+										<h6 class="project-title">중소기업자재/구매프로세스</h6>
+										<p class="project-description">
+											프로젝트 기간 : 2주
+										</p>
+										<p class="txt">
+											자재관리와 구매관리 프로세스 없이 <br>
+											사세가 급속히 확장돼, 재고관리를 비롯한 <br>
+											다양한문제에 직면했습니다. <br>
+											탤런트뱅크 전문가는 <span>짧은기간</span>에도 <br>
+											<span>노련</span>하게 자재와 구매 관리 <span>프로세스를 <br>
+													정립</span>했고, <span>필수 메뉴얼</span>까지 완비해 <br>
+											사업확장 토대를 마련했습니다.
+										</p>
+										<div class="project-tags">
+											<span class="tag">자재관리</span>
+											<span class="tag">구매관리</span>
+											<span class="tag">매뉴얼구축</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="swiper-slide">
+								<div class="card-content">
+									<div class="project-case">
+										<span class="badge badge-lg badge-pill badge-client">프로젝트</span>
+										<h6 class="project-title">전기전자/반도체 일본 영업</h6>
+										<p class="project-description">
+											프로젝트 기간 : 1년
+										</p>
+										<p class="txt">
+											거래처 확장이 어려워져 <br>
+											전문가를 모시게 됐습니다.  <br>
+											전문가님은 해외 영업으로 30년간 <br>
+											근무했던 <span>경험</span>과 <span>수많은 인맥</span>으로 몇 년 <br>
+											골치였던 거래처 확장은 물론 영업 및 <br>
+											거래처 <span>관리 프로세스</span>도 정립했습니다. <br>
+											전문가님을 만난 건 정말 큰 행운이었습니다.
+										</p>
+										<div class="project-tags">
+											<span class="tag">자재관리</span>
+											<span class="tag">구매관리</span>
+											<span class="tag">매뉴얼구축</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="btn-case">
+					<a href="stories.html">프로젝트 사례 보러가기&nbsp;&nbsp;<svg width="10" height="16" viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 14.5L8.5 8L1.5 1.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+				</div>
+			</div>
+			<div class="service-section05">
+				<h5 data-aos="fade-up" data-aos-duration="400" data-aos-delay="300">전문가 프로젝트</h5>
+				<p class="desc-text" data-aos="fade-up" data-aos-duration="400" data-aos-delay="300">기업의 중요한 프로젝트!<br>원하는 기간, 방식, 비용에 맞춰 <span class="wbr">검증된 전문가를 투입할 수 있습니다.</span></p>
+				
+					
+					
+						<a href="javascript:void(0);" onclick="gf_openCounselPopup('0', 'project', '0')" class="btn btn-primary" data-aos="fade-up" data-aos-duration="400" data-aos-delay="300">전문가 프로젝트 문의하기</a>
+					
+				
+			</div>
+		</div>
+	</div>
+	<!-- //content-body -->
+	<script type="text/javascript" src="assets/mirror/2748ff37b0c8b1cf4f02.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			AOS.init();
+
+			var caseList = new Swiper('.case-section .swiper-container', {
+				init: true,
+				autoplay: {
+					delay: 3000,
+					disableOnInteraction: false,
+				},
+				autoplay: true,
+				noSwiping: true,
+				noSwipingClass: 'case-list',
+				slidesPerView: '3',
+				spaceBetween: 32,
+				observer:true,
+				observeParents:true,
+				breakpoints: {
+					991: {
+						loop: true,
+						speed: 800,
+						noSwiping: false,
+						noSwipingClass: 'case-list',
+						slidesPerView: 1.1,
+						centeredSlides: true,
+						spaceBetween: 12,
+					},
+				}
+			});
+
+			var slides = document.querySelectorAll('.case-section .swiper-slide');
+			var currentIndex = 0;
+
+			if (slides.length > 0 && window.innerWidth >= 992) {
+				setInterval(function() {
+					slides.forEach(function(slide) {
+						slide.classList.remove('swiper-slide-active');
+					});
+					slides[currentIndex].classList.add('swiper-slide-active');
+					currentIndex = (currentIndex + 1) % slides.length;
+				}, 3000);
+			}
+		});
+	</script>
+</div>
+<!-- //local-body -->
+
+			<!-- //content-body -->
+		</div>
+		<!-- //local-body -->
+	</div>
+	<!-- //page-body -->
+
+	<hr />
+
+	<!-- page-foot -->
+	
+
+
+
+
+
+
+
+
+<!-- page-foot -->
+<div class="page-foot">
+	<!-- help-support -->
+	<div class="help-support">
+		<h2>Help &amp; Support</h2>
+		<ul class="data-list">
+			<li class="data-item"><a class="data-name" href="faq.html"><span class="head">FAQ</span> <span class="body">가장 많이 문의 주셨던 사항을 정리했습니다.</span></a></li>
+
+			<li class="data-item"><a class="data-name" href="#none" onclick="lf_goInquiry()"><span class="head">1:1 문의</span> <span class="body">문의사항을 남겨주시면, 신속하게 응대해 드립니다. <br>
+				<span style="display:block; text-align:right;">
+        			09:00 ~ 18:00 (토/일/공휴일 휴무)
+    			</span></span></a></li>
+		</ul>
+	</div>
+	<!-- //help-support -->
+
+	<!-- free-app -->
+	
+	<!-- company -->
+	<div class="company policies">
+		<h2>Service</h2>
+		<ul class="data-list">
+			
+			<li class="data-item"><a class="data-name" href="javascript:void(0);" onclick="gf_openUrlWindowPopup('https://front.talentbank.co.kr/resource/document/talentbank_about_us.pdf')">서비스 소개서 <svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.25 8V10.5H2.25V8H1V10.5C1 10.8315 1.1317 11.1495 1.36612 11.3839C1.60054 11.6183 1.91848 11.75 2.25 11.75H12.25C12.5815 11.75 12.8995 11.6183 13.1339 11.3839C13.3683 11.1495 13.5 10.8315 13.5 10.5V8H12.25Z" fill="#BEBEBE"/><path d="M10.25 5.375L9.36625 4.49125L7.75 6.1075V1H6.5V6.1075L4.88375 4.49125L4 5.375L7.125 8.5L10.25 5.375Z" fill="#BEBEBE"/></svg></a></li>
+			
+			<li class="data-item"><a class="data-name" href="/menu/usageInfo?type=">서비스 이용안내</a></li>
+			
+		</ul>
+	</div>
+	<!-- //company -->
+
+	<!-- company -->
+	<div class="policies">
+		<h2>Policies</h2>
+		<ul class="data-list">
+			<li class="data-item"><a class="data-name" href="/common/joinForm31">개인정보처리방침</a></li>
+			<li class="data-item"><a class="data-name" href="/common/joinForm32">이용약관</a></li>
+			<li class="data-item"><a class="data-name" href="https://www.ftc.go.kr/bizCommPop.do?wrkr_no=8878602224" target="_blank">통신판매업 확인</a></li>
+		</ul>
+	</div>
+
+	
+	<div class="policies">
+		<h2>Guides</h2>
+		<ul class="data-list">
+			<!-- <li class="data-item"><a class="data-name" href="/menu/usageInfo?type="><span class="head">기업고객 이용안내</span></a></li> -->
+			<li class="data-item"><a class="data-name" href="/menu/expertInfo"><span class="head">전문가 종합 이용안내</span></a></li>
+			<li class="data-item"><a class="data-name" href="/menu/expertGuide"><span class="head">서비스 이용 가이드</span></a></li>
+			<li class="data-item"><a class="data-name" href="javascript:void(0);" onclick="gf_openUrlWindowPopup('https://article.talentbank.co.kr')"><span class="head">아티클</span></a></li>
+		</ul>
+	</div>
+	<!-- //company -->
+
+	<!-- website-info -->
+	
+	<div class="website-info v2">
+		<h2>Website Info</h2>
+		<div class="footer-text">
+			<p><span class="data-name">서울특별시 구로구 디지털로 272, 한신아이티타워 7층 711호 (구로동) (주)휴넷탤런트뱅크</span><span class="data-name">대표이사 : 조영탁</span><br><span class="data-name">유료직업소개사업등록번호 : (국내) 제 2021-3160160-14-5-00008 호</span><span class="data-name">통신판매업신고 : 제2020-서울구로-2774호</span><br><span class="data-name">사업자등록번호 : 887-86-02224</span><span class="data-name">Email : tbhelp@talentbank.co.kr</span><span class="data-name wbr">&copy; 2017. 휴넷탤런트뱅크 All rights reserved.</span></p>
+		</div>
+		<div class="tb-app-award v2 hidden-sm hidden-xs">
+			<a href="https://play.google.com/store/apps/details?id=kr.co.hunet.talentbank" target="_blank" class="btn-googleplay"><span>Google play</span></a>
+			<a href="https://itunes.apple.com/kr/app/id1452430212?mt=8" target="_blank" class="btn-appstore"><span>App store</span></a>
+		</div>
+	</div>
+	<!-- //website-info -->
+
+	<!-- sns-channels -->
+	
+	<div class="sns-channels v2">
+		<h2><abbr title="Social Network Service">SNS</abbr> Channel</h2>
+		<ul class="data-list">
+			<li class="data-item googleplay visible-xs-block visible-sm-block"><a class="data-name" href="https://play.google.com/store/apps/details?id=kr.co.hunet.talentbank" target="_blank"><svg width="22" height="24" viewBox="0 0 22 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.17245 0.210235C2.80088 -0.0996118 3.52144 -0.0663302 4.12604 0.305861L16.1542 7.4689L12.7091 11.0085L2.17245 0.210235ZM1 2.14719C1 1.81765 1.07151 1.49749 1.20443 1.20968L11.7388 12.0056L1.20627 22.8277C1.07196 22.546 1 22.2305 1 21.8996V2.14719ZM12.7106 13.0011L2.19088 23.8102C2.47003 23.9423 2.76706 24 3.06363 24C3.42987 24 3.79519 23.9105 4.12614 23.707L16.1566 16.5332L12.7106 13.0011ZM20.7301 10.1931C20.7319 10.1943 20.7337 10.1955 20.7355 10.1967C21.3566 10.582 21.7274 11.2561 21.7274 11.9995C21.7274 12.743 21.3566 13.417 20.7355 13.8028L17.3852 15.8002L13.6807 12.0037L17.3829 8.19979L20.7227 10.1887C20.725 10.1901 20.7276 10.1916 20.7301 10.1931Z" fill="#9E9E9E"/></svg></a></li>
+			<li class="data-item apple visible-xs-block visible-sm-block"><a class="data-name" href="https://itunes.apple.com/kr/app/id1452430212?mt=8" target="_blank"><svg width="21" height="24" viewBox="0 0 21 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M14.5241 0C14.6118 3.30143 12.3507 5.59181 10.0923 5.44817C9.72017 2.81351 12.3504 0 14.5241 0ZM0 12.9299C0 16.6583 3.01891 23.9793 6.66855 24H6.6924C7.5997 24 8.39963 23.7066 9.10662 23.4473L9.11282 23.4451C9.63128 23.2541 10.121 23.0741 10.5083 23.0741C11.2723 23.0741 11.7347 23.2672 12.2707 23.4912L12.2709 23.4913C12.8006 23.7126 13.4011 23.9635 14.2506 23.9635C17.7227 23.9635 20.1137 17.6422 20.1137 17.3478C20.1137 16.8977 19.7649 16.6915 19.4273 16.4919L19.4254 16.4908L19.4245 16.4902C18.6579 16.037 17.0646 15.095 17.0646 12.6473C17.0646 10.5799 18.4724 9.53612 19.2442 8.96386L19.2445 8.96364L19.7847 8.56307L19.4093 8.00879C17.8069 5.64407 15.1415 5.45449 14.2625 5.45449H14.2555C13.0782 5.45449 12.0673 5.8495 11.2548 6.16733L11.2384 6.1737C10.8616 6.32034 10.4398 6.48446 10.2593 6.48446C9.95337 6.48446 9.40335 6.28589 8.87152 6.09353C8.111 5.81778 7.24875 5.50617 6.44124 5.50617C4.6494 5.50617 0 6.83951 0 12.9299Z" fill="#9E9E9E"/></svg></a></li>
+			<li class="data-item youtube"><a class="data-name" href="https://www.youtube.com/channel/UC6BpWQi6c4KbKLTaygT02zA" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 183.96 128.77"  xml:space="preserve"><path d="M180.11,20.11c-2.12-7.91-8.35-14.15-16.26-16.26C149.5,0,91.98,0,91.98,0c0,0-57.53,0-71.87,3.85C12.19,5.96,5.96,12.19,3.84,20.11,0,34.45,0,64.39,0,64.39c0,0,0,29.93,3.84,44.28,2.12,7.92,8.35,14.15,16.27,16.26,14.35,3.84,71.87,3.84,71.87,3.84,0,0,57.52,0,71.87-3.84,7.91-2.12,14.15-8.35,16.26-16.26,3.84-14.35,3.84-44.28,3.84-44.28,0,0,0-29.93-3.84-44.28"/><polygon style="fill:#000;" points="73.58 91.98 121.38 64.39 73.58 36.79 73.58 91.98"/></svg></a></li>
+			<li class="data-item facebook"><a class="data-name" href="https://www.facebook.com/Talentbank-111850668100866" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><title>facebook</title><path d="M22.676,0C23.407,0,24,0.593,24,1.324v21.353C24,23.407,23.407,24,22.676,24H16.56v-9.294h3.12l0.467-3.622H16.56V8.771c0-1.048,0.291-1.763,1.795-1.763l1.918-0.001V3.768c-0.332-0.044-1.47-0.143-2.795-0.143c-2.765,0-4.658,1.687-4.658,4.787v2.672H9.692v3.622h3.127V24H1.325C0.593,24,0,23.407,0,22.677V1.324C0,0.593,0.593,0,1.325,0H22.676"/></svg></a></li>
+			<li class="data-item instagram"><a class="data-name" href="https://www.instagram.com/talentbank.official" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><title>instagram</title><path fill="#9E9E9E" d="M17.07,0.01H6.93c-3.82,0-6.92,3.1-6.92,6.92v10.14c0,3.82,3.1,6.92,6.92,6.92h10.14c3.82,0,6.92-3.1,6.92-6.92V6.93C23.99,3.11,20.89,0.01,17.07,0.01 M21.79,17.25c0,2.54-2.06,4.6-4.6,4.6H6.81c-2.54,0-4.6-2.06-4.6-4.6V6.87c0-2.54,2.06-4.6,4.6-4.6h10.38c2.54,0,4.6,2.06,4.6,4.6V17.25z"/><path fill="#9E9E9E" d="M12,5.84c-3.44,0-6.22,2.79-6.22,6.22c0,3.44,2.79,6.23,6.22,6.23s6.22-2.79,6.22-6.23C18.22,8.62,15.44,5.84,12,5.84 M12,16.1c-2.23,0-4.03-1.81-4.03-4.04c0-2.23,1.81-4.03,4.03-4.03c2.23,0,4.03,1.81,4.03,4.03C16.03,14.29,14.23,16.1,12,16.1"/><path fill="#9E9E9E" d="M18.43,4.15c-0.8,0-1.45,0.65-1.45,1.45s0.65,1.45,1.45,1.45c0.8,0,1.45-0.65,1.45-1.45S19.23,4.15,18.43,4.15"/></svg></a></li>
+
+			<li class="data-item naver-blog"><a class="data-name" href="https://blog.naver.com/talentbankmk" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><title>네이버 블로그</title><path fill="#9E9E9E" d="M24,19.6c0,2.43-1.95,4.4-4.36,4.4H4.36C1.95,24,0,22.03,0,19.6V4.39C0,1.97,1.95,0,4.36,0h15.27C22.05,0,24,1.97,24,4.39V19.6z"/><path fill="#212121" d="M18.78,1.97H4.86c-1.78,0-3.21,1.46-3.21,3.25v7.71c0,1.79,1.44,3.25,3.21,3.25h4.8l1.64,2.69c0,0,0.02,0.03,0.05,0.08c0.1,0.17,0.27,0.28,0.48,0.28c0.2,0,0.38-0.11,0.47-0.27c0.04-0.05,0.06-0.08,0.06-0.08l1.64-2.69h4.8c1.78,0,3.22-1.46,3.22-3.25V5.22C22,3.43,20.56,1.97,18.78,1.97"/><path fill="#fff" d="M6.16,7.62c0,0-0.56,0-1.06,0.5V6.13H3.86v5.23h1.26v-0.41c0,0,0.3,0.54,1.05,0.54c0,0,1.76-0.07,1.76-1.96C7.92,9.53,7.85,7.62,6.16,7.62 M5.89,10.38c-0.44,0-0.8-0.36-0.8-0.81c0-0.45,0.36-0.81,0.8-0.81c0.44,0,0.8,0.36,0.8,0.81C6.69,10.02,6.33,10.38,5.89,10.38"/><path fill="#fff" d="M8.32,6v1.21c0,0,0.57-0.03,0.57,1.04v3.1h1.2V7.97C10.09,7.97,10.14,6,8.32,6"/><path fill="#fff" d="M13.03,7.64c0,0-2.06,0-2.06,1.94c0,0-0.07,1.91,2.06,1.91c0,0,2.11,0,2.11-1.91C15.13,9.58,15.2,7.64,13.03,7.64M13.03,10.38c-0.44,0-0.8-0.36-0.8-0.81c0-0.45,0.36-0.81,0.8-0.81c0.44,0,0.8,0.36,0.8,0.81C13.83,10.02,13.47,10.38,13.03,10.38"/><path fill="#fff" d="M18.57,7.76v0.36c0,0-0.36-0.48-1.05-0.48c0,0-1.76-0.08-1.76,1.92c0,0-0.02,1.86,1.71,1.86c0,0,0.71,0.03,1.1-0.48v0.29c0,0,0.09,0.92-0.79,0.92h-0.3v1.11h0.49c0,0,1.82,0.02,1.82-1.96V7.76H18.57z M17.83,10.38c-0.44,0-0.8-0.36-0.8-0.81c0-0.45,0.36-0.81,0.8-0.81c0.44,0,0.8,0.36,0.8,0.81C18.63,10.02,18.27,10.38,17.83,10.38"/></svg></a></li>
+		</ul>
+	</div>
+	<!-- //sns-channels -->
+</div>
+<!-- //page-foot -->
+
+<a href="#page" class="back-top">top</a>
+
+
+
+<!-- LOGGER(TM) SCRIPT FOR SETTING ENVIRONMENT V.27 :  / FILL THE VALUE TO SET. -->
+<script type="text/javascript">
+	_TRK_CP = "projects.html";
+</script>
+<!-- END OF ENVIRONMENT SCRIPT -->
+
+
+<!-- LOGGER(TM) TRACKING SCRIPT V.40 FOR logger.co.kr / 101384 : COMBINE TYPE / DO NOT ALTER THIS SCRIPT. -->
+<script type="text/javascript">var _TRK_LID = "101384";var _L_TD = "ssl.logger.co.kr";var _TRK_CDMN = ".talentbank.co.kr";</script>
+
+
+<!-- END OF LOGGER TRACKING SCRIPT -->
+
+
+<!-- Enliple Tracker Start -->
+
+<!-- Enliple Tracker End -->
+	<!-- //page-foot -->
+</div>
+
+
+
+
+<script type="text/javascript">
+	$(function() {
+		var localNavigations = new Swiper('.local-navi .swiper-container', {
+			slidesPerView: "auto",
+			freeMode: true,
+			grabCursor: true,
+			simulateTouch: true,
+			preventClicks: true,
+			paginationClickable: true,
+			autoHeight: true,
+			noSwiping: true,
+			noSwipingClass : 'lnb-list',
+			breakpoints: {
+				910: {
+					noSwiping: false,
+				},
+			}
+		});
+
+		
+
+		/**
+		* Client 상단 Expert 검색창 자동완성
+		*/
+		if('for-nonmembers' == 'for-client' || 'for-nonmembers' == 'for-nonmembers' || 'for-nonmembers' == 'for-expert') {
+			$(".srchValueAuto").autocomplete({
+				source : function(request, response) {
+					setTimeout(function() {
+						lf_searchAuto(request.term, 'srchValueAuto');
+						//lf_searchExpertAuto(request.term, 'srchValueAuto');
+					}, 1);
+				},
+				delay: 300,
+				minLength: 0,
+				focus: function(event, ui) { // 파이어폭스 브라우저에서 한글 검색이 안되는 현상 방지
+					event.preventDefault();
+					return false;
+				}
+			});
+
+			$(".localSearchKeyword").autocomplete({
+				source : function(request, response) {
+					setTimeout(function() {
+						lf_searchAuto(request.term, 'localSearchKeyword');
+						//lf_searchExpertAuto(request.term, 'localSearchKeyword');
+					}, 1);
+				},
+				delay: 300,
+				minLength: 0,
+				focus: function(event, ui) { // 파이어폭스 브라우저에서 한글 검색이 안되는 현상 방지
+					event.preventDefault();
+					return false;
+				}
+			});
+		}
+
+		$('.account-area .avatar-drop-menu').buiToggle({
+			reactTarget: 'body',
+			reactActiveClass: 'active-account-area',
+			clickout: true,
+			clickoutTarget: '.account-item',
+			closeButtonText: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><title>닫기</title><path d="M23.896,1.586l-10.309,10.4L24,22.301l-1.586,1.6L12.006,13.582L1.679,24l-1.584-1.583l10.317-10.416L0,1.683L1.582,0.1L11.99,10.407L22.296,0.001L23.896,1.586z"/></svg>',
+		});
+	});
+
+	$(function() {
+		/**
+		 * Project 상태 가이드 팝업
+		 */
+		// $('.project-status-guide').modal();
+		/**
+		 * Project 상태 가이드 팝업
+		 */
+		// $('.project-status-guide').modal();
+		if('project' != 'main') {
+			var canDisplayGuide = false;
+			/* if('' == 'projectRegType' || '' == 'projectReg1' || '' == 'projectRegForm') { */
+			if('false') {
+				canDisplayGuide = true;
+			} else if('' == 'profileHistory' || '' == 'projectViewContent' || '' == 'projectViewCompany' || '' == 'projectViewQna' || '' == 'projectViewAdmCmt' || '' == 'projectViewContract' || '' == 'projectApplyList' || 'projectMain' == 'solutionView' || '' == 'projectApplyView' || '' == 'projectApply') {
+				if(!(('' == 'projectApply' && '' == 'Y') || ('' == 'projectApply' && '' > 0 && '' != 'PRJ_ST014') || ('' == 'projectApply' && '' == 'N') || ('' == 'projectApplyView'))) {
+					if('projectMain' != 'solutionView') {
+						canDisplayGuide = true;
+					}
+				}
+			}
+
+
+			if(canDisplayGuide) {
+				var projectStatusGuide = $('.direct-project-status-guide').buiToggle({
+					close: true,
+					closeButtonText: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><title>닫기</title><path d="M12 11.293l10.293-10.293.707.707-10.293 10.293 10.293 10.293-.707.707-10.293-10.293-10.293 10.293-.707-.707 10.293-10.293-10.293-10.293.707-.707 10.293 10.293z"></path></svg>',
+					closeButtonPosition: '.popup-page-body',
+					clickout: true,
+					clickoutTarget: '.popup-page-body',
+					reactTarget: 'body',
+					reactActiveClass: 'active-project-status-guide',
+					activeCallBack: function() {
+						$('.project-status-guide').find('.popup-local-body').scrollTop(0);
+					},
+				});
+			}
+		}
+	});
+
+	function lf_getNoticeList() {
+		$.ajax({
+			url : "/notice/ajax/getNoticeAlarmListAjax"
+			,dataType : "html"
+			,cache : false
+			,success : function(data) {
+				$("#noticePopup").append(data);
+			}
+		});
+	}
+
+	$(function() {
+		var isMobile = 'false';
+		var isApp = 'false';
+		var userAgentAndroid = /Android/i.test(navigator.userAgent);
+
+		if (isMobile == 'true' && isApp == 'false'){
+			if (userAgentAndroid) {
+				$(".page-body").addClass("app-install-wrap");
+			}
+		}
+		lf_getNoticeList();
+	});
+
+	//안드로이드 배너 클릭시 앱링크 이동
+	function lf_appLink() {
+		var requestURL = 'http://www.talentbank.co.krprojects.html';
+		setTimeout(function() {
+			location.href = "intent://openurl?randingUrl=" + requestURL + "#Intent;scheme=talentbank;package=kr.co.hunet.talentbank;end";
+		}, 1000);
+	}
+
+	function lf_searchAuto(keyword, type) {
+		var searchValue = "";
+		if(type == 'srchValueAuto') {
+			searchValue = $("input[name='searchValue']").val();
+		} else if(type == 'localSearchKeyword') {
+			searchValue = $("#localSearchKeyword-2").val();
+		}
+
+		if(searchValue != undefined && searchValue != '') {
+			$.ajax({
+				url : "/common/ajax/autoKeyword"
+				,data : { keyword : keyword }
+				,dataType : "json"
+				,contentType : "application/json"
+				,cache : false
+				,success : function(data) {
+					var html = "";
+					if(data != null && data.length > 0) {
+						$(data).each(function(i, v) {
+							html += `<button type="button" class="item" onclick="lf_goSearchListPage('${v.keyword}')">${v.highLightKeyword}</button>`;
+							//html += "<button type=\"button\" class=\"item\" onclick=\"lf_goExpertSearchListPage('" + v.profileTitle + "');\">" + v.highlightProfileTitle + "</button>";
+						});
+
+						if(type == 'srchValueAuto') {
+							$("#autoSearchExpert").css("display","block");
+							$(".main-search-drop").css("display","none");
+
+						} else if(type == 'localSearchKeyword') {
+							$("#autoSearchExpertMo").css("display","block");
+							$(".main-search-drop").css("display","none");
+						}
+					} else {
+						html = "";
+						if(type == 'srchValueAuto') {
+							$("#autoSearchExpert").css("display","none");
+						} else if(type == 'localSearchKeyword') {
+							$("#autoSearchExpertMo").css("display","none");
+						}
+					}
+					if(type == 'srchValueAuto') {
+						$("#autoSearchExpert").html(html);
+					} else if(type == 'localSearchKeyword') {
+						$("#autoSearchExpertMo").html(html);
+					}
+				}
+			});
+		} else {
+			if(type == 'srchValueAuto') {
+				$("#autoSearchExpert").css("display", "none");
+				$("#autoSearchExpert").html(""); // (이전 검색 기록에 대한)자동완성 제거
+			} else if(type == 'localSearchKeyword') {
+				$("#autoSearchExpertMo").css("display", "none");
+				$("#autoSearchExpertMo").html(""); // (이전 검색 기록에 대한)자동완성 제거
+			}
+		}
+	}
+
+	function lf_searchExpertAuto(keyword, type) {
+		var searchValue = "";
+		if(type == 'srchValueAuto') {
+			searchValue = $("input[name='searchValue']").val();
+		} else if(type == 'localSearchKeyword') {
+			searchValue = $("#localSearchKeyword-2").val();
+		}
+		// 검색 타입(전문가, 상품, 공고, 온자)에 따른 분기 처리
+		const searchFilter = $(".local-search-main .main-search-drop a");
+		let searchFilterIdx;
+		for (var i =0; i<searchFilter.length; i++){
+			if (searchFilter[i].className.indexOf("on") > 0){
+				searchFilterIdx = i;
+			}
+		}
+		if(searchValue != undefined && searchValue != '') {
+			$.ajax({
+				url : "/common/ajax/autoKeyword"
+				,data : { keyword : keyword }
+				,dataType : "json"
+				,contentType : "application/json"
+				,cache : false
+				,success : function(data) {
+					var html = "";
+					if(data != null && data.length > 0) {
+						$(data).each(function(i, v) {
+							if (searchFilterIdx == 0) {
+								html += `<button type="button" class="item" onclick="lf_goExpertSearchListPage('${v.keyword}')">${v.highLightKeyword}</button>`;
+							} else if (searchFilterIdx == 1) {
+								html += `<button type="button" class="item" onclick="lf_goProjectProductSearchListPage('${v.keyword}')">${v.highLightKeyword}</button>`;
+							} else if (searchFilterIdx == 2) {
+								html += `<button type="button" class="item" onclick="lf_goProjectSearchListPage('${v.keyword}')">${v.highLightKeyword}</button>`;
+							} else if (searchFilterIdx == 3) {
+								html += `<button type="button" class="item" onclick="lf_goConsultSearchListPage('${v.keyword}')">${v.highLightKeyword}</button>`;
+							}
+							//html += "<button type=\"button\" class=\"item\" onclick=\"lf_goExpertSearchListPage('" + v.profileTitle + "');\">" + v.highlightProfileTitle + "</button>";
+						});
+						if(type == 'srchValueAuto') {
+							$("#autoSearchExpert").css("display","block");
+							$(".main-search-drop").css("display","none");
+
+						} else if(type == 'localSearchKeyword') {
+							$("#autoSearchExpertMo").css("display","block");
+							$(".main-search-drop").css("display","none");
+						}
+					} else {
+						html = "";
+						if(type == 'srchValueAuto') {
+							$("#autoSearchExpert").css("display","none");
+						} else if(type == 'localSearchKeyword') {
+							$("#autoSearchExpertMo").css("display","none");
+						}
+					}
+					if(type == 'srchValueAuto') {
+						$("#autoSearchExpert").html(html);
+					} else if(type == 'localSearchKeyword') {
+						$("#autoSearchExpertMo").html(html);
+					}
+				}
+			});
+		} else {
+			if(type == 'srchValueAuto') {
+				$("#autoSearchExpert").css("display", "none");
+				$("#autoSearchExpert").html(""); // (이전 검색 기록에 대한)자동완성 제거
+			} else if(type == 'localSearchKeyword') {
+				$("#autoSearchExpertMo").css("display", "none");
+				$("#autoSearchExpertMo").html(""); // (이전 검색 기록에 대한)자동완성 제거
+			}
+		}
+	}
+
+	function lf_goSearchListPage(val) {
+		sessionStorage.expertScrollTop = 0;
+		location.href = "search.html?searchValue=" + encodeURIComponent(val);
+	}
+
+	function lf_goExpertSearchListPage(val) {
+		sessionStorage.expertScrollTop = 0;
+		if ($("#localSearchKeyword").hasClass("client")) {
+			location.href = "experts.html?searchValue=" + encodeURIComponent(val);
+		}else if ($("#localSearchKeyword").hasClass("expert")) {
+			location.href = "/common/project/projectSearch?searchValue=" + encodeURIComponent(val);
+		}
+	}
+
+	function lf_goProjectSearchListPage(val) {
+		location.href = "/common/project/projectSearch?searchValue=" + encodeURIComponent(val);
+		sessionStorage.projectSearchScrollTop = 0;
+	}
+
+	function lf_goProjectProductSearchListPage(val) {
+		location.href = "/common/productSearchList?searchValue=" + encodeURIComponent(val);
+		sessionStorage.productListScrollY = 0;
+	}
+
+	function lf_goConsultSearchListPage(val) {
+		location.href = "/common/consult-list?searchValue=" + encodeURIComponent(val);
+		sessionStorage.projectSearchScrollTop = 0;
+	}
+
+
+	function lf_test(){
+		if($("#solutionDepth").length > 0){
+			$("#solutionDepth").attr("href", "stories.html");
+		}
+
+		//if($('.solution-depth').is(":visible")){
+			$(".mSolutionTab").attr("id","solutionDepth");
+		//}
+
+	}
+
+	function lf_selectTab() {
+		var serviceType = "";
+		if(serviceType == 'expert'){
+			gf_expertAlert();
+		} else {
+			gf_forClientNotice();
+		}
+	}
+
+	//로그인 상태 확인
+	function lf_chkLogin(type) {
+		var serviceType = "";
+		if(serviceType != ''){
+			gf_openToastDefault("이미 가입하신 회원입니다.");
+		} else {
+			if(type == 'client'){
+				location.href = "signup.html?type=client";
+			} else {
+				location.href = "signup.html?type=expert";
+			}
+		}
+	}
+
+	//바로가기
+	function lf_mCheck() {
+		
+			
+			
+				$("#confirmBtn2").removeClass();
+				$("#confirmBtn2").addClass("btn btn-client");
+
+				gf_confirmOpen("회원만 이용할 수 있습니다.<br>로그인 후 이용하시겠습니까?","로그인하기");
+				$("#confirmBtn2").click(function() {
+					location.href = "login.html?serviceTypeCode=SVC_TY002";
+				});
+			
+		
+	}
+
+	// 새로운 알림이 있는지 검사...
+	var newAlarm = false;
+	$.ajax({
+		url : "/common/ajax/selectNewAlarmCnt"
+		,data : {}
+		,dataType : "json"
+		,contentType: "application/json"
+		,cache : false
+		,success : function(data) {
+			if(data.result_code == "SUCCESS" && data.resultValue01 == "Y") {
+				$("#msgNewDiv").css("display", "block");
+				$("#messageManage").addClass("active update");
+				newAlarm = true;
+			}else{
+				$("#msgNewDiv").css("display", "none");
+				$("#messageManage").removeClass("active update");
+			}
+		}
+	});
+
+	$("#accountArea").click(function() {
+		if($(".client-side-login").hasClass("active")){
+			$("#msgNewDiv").css("display", "none");
+		}
+	});
+
+	$(document).mouseup(function (e) {
+		if(newAlarm){
+			var container = $("#msgNewDiv");
+			if (container.has(e.target).length == 0) {
+				if(!false){
+					container.show();
+				}
+			}
+		}
+	});
+
+	function lf_solutionCntChk(){
+		var solutionCnt = "";
+		if(solutionCnt < 5){
+			location.href = "/expert/profile/solutionRegForm";
+		} else {
+			gf_openToastDefault("Expert's 제안은 최대 5개까지 등록 가능해요.");
+		}
+	}
+
+	function lf_newNonMemberSearchSession(seq) {
+		var chk = true;
+
+		// 누락항목 체크
+		$(".empty").each(function(i, v) {
+			$(this).removeClass("empty");
+		});
+
+		var email = $("#firstEmail" + seq).val()+"@"+$("#lastEmail" + seq).val();
+		if (!gf_emailChk(email)) {
+			$(".mail-input-box").addClass("empty");
+			$(".empty-txt").show();
+
+			chk = false;
+		}
+
+		var agreeChk = $("#terms5" + seq).is(":checked");
+		if (!agreeChk) {
+			gf_openToastDefault("개인정보 이용에 동의해주세요.");
+			chk = false;
+		}
+
+		if(chk){
+			// 저장 ajax
+			var email = $("#firstEmail" + seq).val()+"@"+$("#lastEmail" + seq).val();
+			$("#email" + seq).val(email);
+
+			var nonMemberParam = {
+				userSearchedSeq : 0
+				,firstJobFieldCode : $("#firstJobFieldCode" + seq).val()
+				,secondJobFieldCode : $("#secondJobFieldCode" + seq).val()
+				,servicePaymentHourPriceCode : $("#servicePaymentHourPriceCode" + seq).val()
+				,servicePaymentDayPriceCode : $("#servicePaymentDayPriceCode" + seq).val()
+				,searchTag : $("#searchTag" + seq).val()
+				,searchValue : $("#searchValue" + seq).val()
+				,email : $("#email" + seq).val()
+			};
+
+			$.ajax({
+				 url : "/common/ajax/insertNewExpertAlarm"
+				,method : "POST"
+				,data : nonMemberParam
+				,dataType : "json"
+				,success : function(data) {
+					if(data.result_code == 'SUCCESS') {
+						gf_openToastDefault("New 전문가 소식받기가 완료되었어요!");
+
+						// 검색 히스토리 쿠키 삭제(유효기간을 바로 만료시킴)
+						//document.cookie = seq + '=' + escape("-1");
+						setCookie(seq,'','-1');
+					} else if(data.result_code == 'FAIL') {
+						gf_checkPopup("동일한 신청 내역이 있어요", "해당 검색 조건으로 이미 알람을 신청하셨습니다. ", "", "확인", "sorry");
+						$("#popBtn2").off().on('click', gf_confirmPopClose);
+					}
+
+					$("#nonUserNewExpertAlarm" + seq).hide();
+				}
+			});
+		}
+	}
+
+	//자동완성 밖 클릭시 드롭다운 none
+	$("body").click(function() {
+		$("#autoSearchExpert").css("display", "none");
+	});
+
+///////////////////////////////////////////
+	var isApp = false;
+	function lf_goView(alarmSeq, linkUrl, alarmType) {
+		$.ajax({
+			url : "/notice/ajax/updateAlarmViewDate"
+			,data : {
+				alarmSeq : alarmSeq
+				,alarmType : alarmType
+			}
+			,dataType : "json"
+			,contentType: "application/json"
+			,cache : false
+			,success : function(data) {
+				if(linkUrl != "") {
+					// App Badge 카운트 수정함
+					if (isApp) {
+						lf_readMsg(alarmSeq, 0);
+					}
+					location.href = linkUrl;
+				} else {
+					location.reload(true);
+				}
+			}
+		});
+	}
+
+	function lf_readAllAlarm() {
+		$.ajax({
+			url : "/notice/ajax/updateViewAllAlarm"
+			,dataType : "json"
+			,contentType: "application/json"
+			,cache : false
+			,success : function() {
+				$(".notice-list-wrap li").addClass("read");
+				$(".num").css('display', 'none');
+			}
+		});
+	}
+</script>
+
+
+<script src="local-site.js"></script></body>
 </html>
